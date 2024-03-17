@@ -20,7 +20,69 @@
         <div id="logo-text"></div>
     </header>
     <main>
-      
+        <div id="new-product-manager">
+            <form id="add-product-form">
+                <input type="text" placeholder="Product Name" name="Product Name" required/>
+                <input type="image" placeholder="Upload Product Image" name="Product Image">
+                <input type="number" placeholder="Insert Product Base Price" name="Base Price" required/>
+                <div id="options-inventory">
+
+                    <div id="canvas-selction">
+                        <input type="checkbox" placeholder="Canvas Print"/>
+                        <div class="size-selctions" id="canvas-sizes">
+                            <input class="quantity"  type="number" name="12 x 16" id="canvas-small"/>
+                            <input class="quantity"  type="number" name="24 x 32" id="canvas-medium"/>
+                            <input class="quantity"  type="number" name="36 x 48" id="canvas-large"/>
+                        </div>
+                    </div>
+                    
+                    <div id="photo-selction">
+                        <input type="checkbox" placeholder="Photo Print"/>
+                        <div class="size-selctions" id="photo-sizes">
+                            <input class="quantity"  type="number" name="12 x 16" id="photo-small"/>
+                            <input class="quantity"  type="number" name="24 x 32" id="photo-medium"/>
+                            <input class="quantity"  type="number" name="36 x 48" id="photo-large"/>
+                        </div>
+                    </div>
+
+                    <div id="original-selction">
+                        <input type="checkbox" placeholder="Original"/>
+                    </div>
+                </div>
+                <input type="text" name="Product Description" id="product-description-text"/>
+                <button id="add-product-button">Add Product</button>
+            </form>
+            <div id="product-preview">
+                <fieldset>
+                    <legend id="product-preview-label">Product Preview</legend>
+                    <div id="image-preview"></div>
+                <div id="product-specs">
+                    <h4 id="listing-name">Product Name</h5>
+                    <h5 id="listing-price">Price</h6>
+                    <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
+                    <div id="inventory-preview">
+                        <h6>Inventory</h6>
+                        <div>
+                            <p>Canvas Prints</p>
+                        </div>
+                        <div>
+                            <p>Original</p>
+                        </div>
+                        <div>
+                            <p>Photo Prints</p>
+                        </div>
+                    </div>
+                </fieldset>
+                </div>
+            </div>
+        </div>
+        <div id="inventory-total-value">
+            <h6 id="total-value-text">Total Value Of Current Inventory:</h6>
+            <h3 id="total-value"></h3>
+        </div>
+        <table>
+
+        </table>
     </main>
     <footer>
         <nav id="footer-nav-menu">
