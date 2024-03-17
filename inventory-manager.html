@@ -16,72 +16,83 @@
             <a>About</a>
         </nav>  
         <div id="logo-block"></div>
-
         <div id="logo-text"></div>
     </header>
     <main>
         <div id="new-product-manager">
-            <form id="add-product-form">
-                <input type="text" placeholder="Product Name" name="Product Name" required/>
-                <input type="image" placeholder="Upload Product Image" name="Product Image">
-                <input type="number" placeholder="Insert Product Base Price" name="Base Price" required/>
-                <div id="options-inventory">
 
-                    <div id="canvas-selction">
-                        <input type="checkbox" placeholder="Canvas Print"/>
-                        <div class="size-selctions" id="canvas-sizes">
-                            <input class="quantity"  type="number" name="12 x 16" id="canvas-small"/>
-                            <input class="quantity"  type="number" name="24 x 32" id="canvas-medium"/>
-                            <input class="quantity"  type="number" name="36 x 48" id="canvas-large"/>
-                        </div>
-                    </div>
-                    
-                    <div id="photo-selction">
-                        <input type="checkbox" placeholder="Photo Print"/>
-                        <div class="size-selctions" id="photo-sizes">
-                            <input class="quantity"  type="number" name="12 x 16" id="photo-small"/>
-                            <input class="quantity"  type="number" name="24 x 32" id="photo-medium"/>
-                            <input class="quantity"  type="number" name="36 x 48" id="photo-large"/>
-                        </div>
-                    </div>
+            <!-- add product form section -->
+            <div id="form-container">
+                <form id="add-product-form">
+                    <input type="text" placeholder="Product Name" name="Product Name" required/>
+                    <input type="image" placeholder="Upload Product Image" name="Product Image">
+                    <input type="number" placeholder="Insert Product Base Price" name="Base Price" required/>
+                    <div id="options-inventory">
 
-                    <div id="original-selction">
-                        <input type="checkbox" placeholder="Original"/>
+                        <div id="canvas-selction">
+                            <input type="checkbox" placeholder="Canvas Print"/>
+                            <div class="size-selctions" id="canvas-sizes">
+                                <input class="quantity"  type="number" name="12 x 16" id="canvas-small"/>
+                                <input class="quantity"  type="number" name="24 x 32" id="canvas-medium"/>
+                                <input class="quantity"  type="number" name="36 x 48" id="canvas-large"/>
+                            </div>
+                        </div>
+                        
+                        <div id="photo-selction">
+                            <input type="checkbox" placeholder="Photo Print"/>
+                            <div class="size-selctions" id="photo-sizes">
+                                <input class="quantity"  type="number" name="12 x 16" id="photo-small"/>
+                                <input class="quantity"  type="number" name="24 x 32" id="photo-medium"/>
+                                <input class="quantity"  type="number" name="36 x 48" id="photo-large"/>
+                            </div>
+                        </div>
+
+                        <div id="original-selction">
+                            <input type="checkbox" placeholder="Original"/>
+                        </div>
+
                     </div>
-                </div>
-                <input type="text" name="Product Description" id="product-description-text"/>
-                <button id="add-product-button">Add Product</button>
-            </form>
-            <div id="product-preview">
-                <fieldset>
+                    <input type="text" name="Product Description" id="product-description-text"/>
+                    <button id="add-product-button">Add Product</button>
+                </form>
+            </div>
+
+            <!-- product preview section-->
+            <div id="product-preview-container">
+                <fieldset id="preview-fieldset">
                     <legend id="product-preview-label">Product Preview</legend>
-                    <div id="image-preview"></div>
-                <div id="product-specs">
-                    <h4 id="listing-name">Product Name</h5>
-                    <h5 id="listing-price">Price</h6>
-                    <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
+                    <h4 id="listing-name">Product Name</h4>
+                    <div id="product-specs">
+                        <div id="image-preview"></div>
+                        <h5 id="listing-price">Price</h5>
+                        <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
+                    </div>
+                    <div id="line-break"><hr></div>
                     <div id="inventory-preview">
-                        <h6>Inventory</h6>
-                        <div>
+                        <div id="canvas-inventory-preview">
                             <p>Canvas Prints</p>
                         </div>
-                        <div>
+                        <div id="original-inventory-preview">
                             <p>Original</p>
                         </div>
-                        <div>
+                        <div id="photo-inventory-preview">
                             <p>Photo Prints</p>
                         </div>
                     </div>
+                    <div id="modification-buttons">
+
+                    </div>
                 </fieldset>
-                </div>
             </div>
+
         </div>
+    
         <div id="inventory-total-value">
             <h6 id="total-value-text">Total Value Of Current Inventory:</h6>
             <h3 id="total-value"></h3>
         </div>
-        <table>
 
+        <table id="invenotry-table-display">
         </table>
     </main>
     <footer>
