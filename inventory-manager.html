@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Storer</title>
-    <link rel="stylesheet" nhref="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script src="main.js" defer></script>
 </head>
 <body>
@@ -31,7 +31,7 @@
 
                         <div id="canvas-selction">
                             <input type="checkbox" placeholder="Canvas Print"/>
-                            <div class="size-selctions" id="canvas-sizes">
+                            <div class="size-selctions" id="canvas-sizes" hidden>
                                 <input class="quantity"  type="number" name="12 x 16" id="canvas-small"/>
                                 <input class="quantity"  type="number" name="24 x 32" id="canvas-medium"/>
                                 <input class="quantity"  type="number" name="36 x 48" id="canvas-large"/>
@@ -40,7 +40,7 @@
                         
                         <div id="photo-selction">
                             <input type="checkbox" placeholder="Photo Print"/>
-                            <div class="size-selctions" id="photo-sizes">
+                            <div class="size-selctions" id="photo-sizes" hidden>
                                 <input class="quantity"  type="number" name="12 x 16" id="photo-small"/>
                                 <input class="quantity"  type="number" name="24 x 32" id="photo-medium"/>
                                 <input class="quantity"  type="number" name="36 x 48" id="photo-large"/>
@@ -79,20 +79,18 @@
                             <p>Photo Prints</p>
                         </div>
                     </div>
-                    <div id="modification-buttons">
 
-                    </div>
                 </fieldset>
             </div>
 
         </div>
     
         <div id="inventory-total-value">
-            <h6 id="total-value-text">Total Value Of Current Inventory:</h6>
-            <h3 id="total-value"></h3>
+            <h3 id="total-value-text">Total Value Of Current Inventory:</h3>
+            <h2 id="total-value"></h2>
         </div>
 
-        <table id="invenotry-table-display">
+        <table id="invenotry-table-display">Inventory Table
         </table>
     </main>
     <footer>
