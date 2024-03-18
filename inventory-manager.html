@@ -20,11 +20,12 @@
         <div id="logo-text"></div>
     </header>
     <main>
+        <h1 id="ims-heading">Inventory Management System</h1>
         <div id="new-product-manager-section">
             <!-- add product form section -->
             <div id="form-container">
             <fieldset id="form-fieldset">
-                <legend>Add New Product</legend>
+                <legend id="product-options-legend">Add New Product</legend>
                 <form id="add-product-form" name="add-product-form">
                     <div class="adp-element">
                         <label>Product Name</label><input type="text" name="Product Name" id="product-name-input"required/>
@@ -38,7 +39,7 @@
 
                     <div class="adp-element">
                         <fieldset id="options-fieldset">
-                            <legend>Product Options</legend>
+                            <legend id="product-options-label">Product Options</legend>
                             <div id="options-inventory">
 
                                 <div class="product-option" id="canvas-selction">
@@ -92,7 +93,7 @@
             <!-- product preview section-->
             <div id="product-preview-container">
                 <fieldset id="preview-fieldset">
-                    <legend id="product-preview-label">Product Preview</legend>
+                    <legend id="product-preview-legend">Product Preview</legend>
                     <h4 id="listing-name">Product Name</h4>
                     <div id="product-specs">
                         <div id="image-preview"></div>
@@ -100,37 +101,49 @@
                         <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                     </div>
                     <div id="line-break"><hr></div>
-                    <div id="inventory-preview">
+                    <div id="inventory-price-preview">
                         <div id="canvas-inventory-preview">
-                            <p>Canvas Prints</p>
+                            <h4>Canvas Prints</h4>
+                            <p>price per unit</p>
+                            <p>12 x 16 <span class="price-per-unit">$0</span></p>
+                            <p>24 x 32 <span class="price-per-unit">$0</span></p>
+                            <p>36 x 48 <span class="price-per-unit">$0</span></p>
                         </div>
                         <div id="original-inventory-preview">
-                            <p>Original</p>
+                            <h4>Original</h4>
+                            <p>price</p>
+                            <p id="original-price">$0</p>
                         </div>
                         <div id="photo-inventory-preview">
-                            <p>Photo Prints</p>
+                            <h4>Photo Prints</h4>
+                            <p>price per unit</p>
+                            <p>12 x 16 <span class="price-per-unit">$0</span></p>
+                            <p>24 x 32 <span class="price-per-unit">$0</span></p>
+                            <p>36 x 48 <span class="price-per-unit">$0</span></p>
                         </div>
                     </div>
 
                 </fieldset>
             </div>
-
         </div>
-        <hr class="page-divider">
+
+        <h2 id="inventory-heading">Current Inventory</h2>
+
+        <!-- <hr class="page-divider"> -->
         <div id="inventory-total-value">
             <h3 id="total-value-text">Total Value Of Current Inventory:</h3>
             <h2 id="total-value">$10543.69</h2>
         </div>
-        <hr class="page-divider">
+        <!-- <hr class="page-divider"> -->
+        
         <div id="inventory-table-container">
             <table id="inventory-table">
-                <caption>Product Inventory</caption>
                 <tr>
-                    <th scope="col">Product Image</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Base Price</th>
-                    <th scope="col">Inventory</th>
-                    <th scope="col">Date Added</th>
+                    <th class="table-heading"  scope="col">Product Image</th>
+                    <th class="table-heading" scope="col">Product Name</th>
+                    <th class="table-heading" scope="col">Base Price</th>
+                    <th class="table-heading" scope="col">Inventory</th>
+                    <th class="table-heading" scope="col">Date Added</th>
                     <th scope="col"></th>
                 </tr>
 
@@ -169,8 +182,8 @@
                     </td>
                     <td>03/17/2024</td>
                     <td id="table-buttons">
-                        <button type="button" id="edit-button">Edit</button>
-                        <button type="button" id="delete-product">Delete</button>
+                        <button class="edit-remove-buttons" type="button" id="edit-button">Edit</button><br>
+                        <button class="edit-remove-buttons" type="button" id="delete-product">Delete</button>
                     </td>
                 </tr>
             </table>

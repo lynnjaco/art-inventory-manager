@@ -21,8 +21,6 @@ header{
     a:hover{
         color:darkgoldenrod;
     }
-
-
 }
 
 footer{
@@ -32,12 +30,25 @@ footer{
     
     a {
         text-decoration: none;
+        color: white;
+    }
+    
+    a:hover{
+        color:darkgoldenrod;
     }
 
     nav{
         display: flex;
         flex-direction: column;
     }
+}
+
+h1{
+    text-align: right;
+    text-transform: uppercase;
+    color: white;
+    background-color: black;
+    padding: 0.5em;
 }
 
 .page-divider{
