@@ -22,6 +22,7 @@
     grid-column: 3 / 5;
     padding: 30px;
     height: 500px;
+    width: 400px;
 
     display: flex;
     justify-content: center;
@@ -41,6 +42,7 @@
     grid-column: 1 / span end;
 
     text-align: center;
+    margin: 0em;
 
 }
 #product-specs {
@@ -50,6 +52,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 2fr;
+    margin-bottom: 20px;
+}
+
+#image-preview{
+    grid-row: 1 / span end;
+    grid-column: 1 / 2;
+    padding-left: 1.0em;
+    padding-right: 1.0em;
+    background-image: url("https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: contain;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
     #listing-price{
         grid-row: 1 / 2;
