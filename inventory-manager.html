@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art Storer</title>
+    <title>Art Store Inventory Manager</title>
     <link rel="stylesheet" href="imstyle.css"/>
     <link rel="stylesheet" href="mainstyle.css"/>
     <script src="main.js" defer></script>
@@ -11,50 +11,67 @@
 <body>
     <header>
         <nav id="headser-nav-menu">
-            <a>Home</a>
-            <a>View Store</a>
-            <a>Inventory Manager</a>
-            <a>About</a>
+            <a href="home.html">Home</a>
+            <a href="storefront.html">View Store</a>
+            <a href="inventory-manager.html">Inventory Manager</a>
+            <a href="about.html">About</a>
         </nav>  
         <div id="logo-block"></div>
         <div id="logo-text"></div>
     </header>
     <main>
         <div id="new-product-manager">
+    
 
             <!-- add product form section -->
             <div id="form-container">
-                <form id="add-product-form">
-                    <input type="text" placeholder="Product Name" name="Product Name" required/>
-                    <input type="image" placeholder="Upload Product Image" name="Product Image">
-                    <input type="number" placeholder="Insert Product Base Price" name="Base Price" required/>
-                    <div id="options-inventory">
+                <form id="add-product-form" name="add-product-form">
+                    <label>Product Name</label><input type="text" name="Product Name" required/>
+                    <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="Product Image" accept="image/png, image/jpeg">
+                    <label>Base Price</label><input type="number" placeholder="$" name="Base Price" id="base-price" required/>
 
-                        <div id="canvas-selction">
-                            <input type="checkbox" placeholder="Canvas Print"/>
-                            <div class="size-selctions" id="canvas-sizes" hidden>
-                                <input class="quantity"  type="number" name="12 x 16" id="canvas-small"/>
-                                <input class="quantity"  type="number" name="24 x 32" id="canvas-medium"/>
-                                <input class="quantity"  type="number" name="36 x 48" id="canvas-large"/>
+                    <fieldset>
+                        <legend>Product Options</legend>
+                        <div id="options-inventory">
+
+                            <div class="product-option" id="canvas-selction">
+                                <label class="product-option-label">Canvas Print</label><input type="checkbox" name="Canvas Print"/>
+                                <div class="size-selctions" id="canvas-sizes">
+                                    <div class="size-option-quantity">
+                                        <label>12 x 16</label><input class="quantity"  type="number" name="canvas-small" id="canvas-small" placeholder="0"/>
+                                    </div>
+                                    <div class="size-option-quantity">
+                                        <label>24 x 32</label><input class="quantity"  type="number" name="canvas-medium" id="canvas-medium" placeholder="0"/>
+                                    </div>
+                                    <div class="size-option-quantity">
+                                        <label>36 x 48</label><input class="quantity"  type="number" name="canvas-large" id="canvas-large" placeholder="0"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="product-option" id="photo-selction">
+                                <label class="product-option-label">Photo Print</label><input type="checkbox" name="Photo Print"/>
+                                <div class="size-selctions" id="photo-sizes">
+                                    <div class="size-option-quantity">
+                                        <label>12 x 16</label><input class="quantity"  type="number" name="photo-small" id="photo-small" placeholder="0"/>
+                                    </div>  
+                                    <div class="size-option-quantity">    
+                                        <label>24 x 32</label><input class="quantity"  type="number" name="photo-medium" id="photo-medium" placeholder="0"/>
+                                    </div>  
+                                    <div class="size-option-quantity"> 
+                                        <label>36 x 48</label><input class="quantity"  type="number" name="photo-large" id="photo-large" placeholder="0"/>
+                                    </div>  
+                                </div>
+                            </div> 
+                            <br>
+                            <div class="product-option" id="original-selction">
+                                <label class="product-option-label">Original</label><input type="checkbox" name="the-original" placeholder=""/>
                             </div>
                         </div>
-                        
-                        <div id="photo-selction">
-                            <input type="checkbox" placeholder="Photo Print"/>
-                            <div class="size-selctions" id="photo-sizes" hidden>
-                                <input class="quantity"  type="number" name="12 x 16" id="photo-small"/>
-                                <input class="quantity"  type="number" name="24 x 32" id="photo-medium"/>
-                                <input class="quantity"  type="number" name="36 x 48" id="photo-large"/>
-                            </div>
-                        </div>
+                    </fieldset>
 
-                        <div id="original-selction">
-                            <input type="checkbox" placeholder="Original"/>
-                        </div>
-
-                    </div>
-                    <input type="text" name="Product Description" id="product-description-text"/>
-                    <button id="add-product-button">Add Product</button>
+                    <label>Product Description</label><input type="text" name="product-description" id="product-description-text" placeholder="Provide product details and helpful information"/>
+                    <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
                 </form>
             </div>
 
@@ -96,10 +113,10 @@
     </main>
     <footer>
         <nav id="footer-nav-menu">
-            <a>Home</a>
-            <a>View Store</a>
-            <a>Inventory Manager</a>
-            <a>About</a>
+            <a href="home.html">Home</a>
+            <a href="storefront.html">View Store</a>
+            <a href="inventory-manager.html">Inventory Manager</a>
+            <a href="about.html">About</a>
         </nav>
         <p id="copyright">© Art Store 2024</p>
         <div id="store-info">
