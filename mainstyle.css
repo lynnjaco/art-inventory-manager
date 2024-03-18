@@ -26,6 +26,8 @@ header{
 }
 
 footer{
+    background-color: black;
+    color: white;
     padding: 1.0em;
     
     a {
@@ -41,6 +43,6 @@ footer{
 .page-divider{
     width: 95%;
     border: 0.03em solid lightgray;
-    margin-top:1.0em;
-    margin-bottom: 1.0em;
+    margin-top:3.0em;
+    margin-bottom: 3.0em;
 }

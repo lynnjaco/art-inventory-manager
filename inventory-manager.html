@@ -12,7 +12,7 @@
     <header>
         <nav id="headser-nav-menu">
             <a href="home.html">Home</a>
-            <a href="storefront.html">View Store</a>
+            <a href="storefront.html">Store</a>
             <a href="inventory-manager.html">Inventory Manager</a>
             <a href="about.html">About</a>
         </nav>  
@@ -26,59 +26,65 @@
             <fieldset id="form-fieldset">
                 <legend>Add New Product</legend>
                 <form id="add-product-form" name="add-product-form">
-                    <label>Product Name</label><input type="text" name="Product Name" required/>
-                    <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="Product Image" accept="image/png, image/jpeg">
-                    <label>Base Price</label><input type="number" placeholder="$" name="Base Price" id="base-price" required/>
+                    <div class="adp-element">
+                        <label>Product Name</label><input type="text" name="Product Name" id="product-name-input"required/>
+                    </div>
+                    <div class="adp-element">
+                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="Product Image" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="adp-element">
+                        <label>Base Price</label><input type="number" placeholder="$" name="Base Price" id="base-price" required/>
+                    </div>
 
-                    <fieldset>
-                        <legend>Product Options</legend>
-                        <div id="options-inventory">
+                    <div class="adp-element">
+                        <fieldset id="options-fieldset">
+                            <legend>Product Options</legend>
+                            <div id="options-inventory">
 
-                            <div class="product-option" id="canvas-selction">
-                                <label class="product-option-label">Canvas Print</label><input type="checkbox" name="Canvas Print"/>
-                                <div class="size-selctions" id="canvas-sizes">
-                                    <div class="size-option-quantity">
-                                        <label>12 x 16</label><input class="quantity"  type="number" name="canvas-small" id="canvas-small" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
-                                    </div>
-                                    <div class="size-option-quantity">
-                                        <label>24 x 32</label><input class="quantity"  type="number" name="canvas-medium" id="canvas-medium" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
-                                    </div>
-                                    <div class="size-option-quantity">
-                                        <label>36 x 48</label><input class="quantity"  type="number" name="canvas-large" id="canvas-large" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
+                                <div class="product-option" id="canvas-selction">
+                                    <label class="product-option-label">Canvas Print</label><input type="checkbox" name="Canvas Print"/>
+                                    <div class="size-selctions" id="canvas-sizes">
+                                        <div class="size-option-quantity">
+                                            <label>12 x 16</label><input class="quantity"  type="number" name="canvas-small" id="canvas-small" placeholder="0" value="0"/>
+                                        </div>
+                                        <div class="size-option-quantity">
+                                            <label>24 x 32</label><input class="quantity"  type="number" name="canvas-medium" id="canvas-medium" placeholder="0" value="0"/>
+                                        </div>
+                                        <div class="size-option-quantity">
+                                            <label>36 x 48</label><input class="quantity"  type="number" name="canvas-large" id="canvas-large" placeholder="0" value="0"/>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <br>
-                            <div class="product-option" id="photo-selction">
-                                <label class="product-option-label">Photo Print</label><input type="checkbox" name="Photo Print"/>
-                                <div class="size-selctions" id="photo-sizes">
-                                    <div class="size-option-quantity">
-                                        <label>12 x 16</label><input class="quantity"  type="number" name="photo-small" id="photo-small" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
-                                    </div>  
-                                    <div class="size-option-quantity">    
-                                        <label>24 x 32</label><input class="quantity"  type="number" name="photo-medium" id="photo-medium" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
-                                    </div>  
-                                    <div class="size-option-quantity"> 
-                                        <label>36 x 48</label><input class="quantity"  type="number" name="photo-large" id="photo-large" placeholder="0" value="0"/>
-                                        <p id="ppu"><span id="price-per-unit-calc">$100</span>/unit</p>
-                                    </div>  
+                                <br>
+                                <div class="product-option" id="photo-selction">
+                                    <label class="product-option-label">Photo Print</label><input type="checkbox" name="Photo Print"/>
+                                    <div class="size-selctions" id="photo-sizes">
+                                        <div class="size-option-quantity">
+                                            <label>12 x 16</label><input class="quantity"  type="number" name="photo-small" id="photo-small" placeholder="0" value="0"/>
+                                        </div>  
+                                        <div class="size-option-quantity">    
+                                            <label>24 x 32</label><input class="quantity"  type="number" name="photo-medium" id="photo-medium" placeholder="0" value="0"/>
+                                        </div>  
+                                        <div class="size-option-quantity"> 
+                                            <label>36 x 48</label><input class="quantity"  type="number" name="photo-large" id="photo-large" placeholder="0" value="0"/>
+                                        </div>  
+                                    </div>
+                                </div> 
+                                <br>
+                                <div class="product-option" id="original-selction">
+                                    <label class="product-option-label">Original</label><input type="checkbox" name="the-original" value="0"/>
                                 </div>
-                            </div> 
-                            <br>
-                            <div class="product-option" id="original-selction">
-                                <label class="product-option-label">Original</label><input type="checkbox" name="the-original" value="0"/>
-                                <p id="ppu"><span id="price-per-unit-calc">$100</span></p>
                             </div>
-                        </div>
-                    </fieldset>
+                        </fieldset>
+                    </div>
 
-                    <label>Product Description</label><input type="text" name="product-description" id="product-description-text" placeholder="Provide product details and helpful information"/>
-                    <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
+                    <div class="adp-element">
+                        <label>Product Description</label><input type="text" name="product-description" id="product-description-input" placeholder="Provide product details and helpful information"/>
+                    </div>
+                    <div class="adp-element">
+                        <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
+                    </div>
+                    
                 </form>
             </fieldset>
         </div>
@@ -90,7 +96,7 @@
                     <h4 id="listing-name">Product Name</h4>
                     <div id="product-specs">
                         <div id="image-preview"></div>
-                        <h5 id="listing-price">Price</h5>
+                        <h5 id="listing-price">Product Price:<span id="product-price-range"> $100 - $500</span></h5>
                         <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                     </div>
                     <div id="line-break"><hr></div>
@@ -116,57 +122,59 @@
             <h2 id="total-value">$10543.69</h2>
         </div>
         <hr class="page-divider">
-        <table id="inventory-table-display">
-            <caption>Product Inventory</caption>
-            <tr>
-                <th scope="col">Product Image</th>
-                <th scope="col">Product Name</th>
-                <th scope="col">Base Price</th>
-                <th scope="col">Inventory</th>
-                <th scope="col">Date Added</th>
-                <th scope="col"></th>
-            </tr>
+        <div id="inventory-table-container">
+            <table id="inventory-table">
+                <caption>Product Inventory</caption>
+                <tr>
+                    <th scope="col">Product Image</th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Base Price</th>
+                    <th scope="col">Inventory</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col"></th>
+                </tr>
 
-            <tr>
-                <td scope="row"><div id="thumnail">Image</div></td>
-                <td>Art Piece</td>
-                <td>$100</td>
-                <td>
-                    <table id="inventory-option-table">
-                        <tr>
-                            <th scope="col">PPU</th>
-                            <th scope="col">Option</th>
-                            <th scope="col">Quantity</th>
-                        </tr>
-                        <tr>
-                            <td>$100</td>
-                            <td>12 x 16</td>
-                            <td>20</td>
-                        </tr>
-                        <tr>
-                            <td>$200</td>
-                            <td>24 x 32</td>
-                            <td>10</td>
-                        </tr>
-                        <tr>
-                            <td>$300</td>
-                            <td>36 x 48</td>
-                            <td>50</td>
-                        </tr>
-                        <tr>
-                            <td>$100</td>
-                            <td>Original</td>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </td>
-                <td>03/17/2024</td>
-                <td id="table-buttons">
-                    <button type="button" id="edit-button">Edit</button>
-                    <button type="button" id="delete-product">Delete</button>
-                </td>
-            </tr>
-        </table>
+                <tr>
+                    <td scope="row"><div id="thumnail">Image</div></td>
+                    <td>Art Piece</td>
+                    <td>$100</td>
+                    <td>
+                        <table id="inventory-option-table">
+                            <tr>
+                                <th scope="col">PPU</th>
+                                <th scope="col">Option</th>
+                                <th scope="col">Quantity</th>
+                            </tr>
+                            <tr>
+                                <td>$100</td>
+                                <td>12 x 16</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>$200</td>
+                                <td>24 x 32</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>$300</td>
+                                <td>36 x 48</td>
+                                <td>50</td>
+                            </tr>
+                            <tr>
+                                <td>$100</td>
+                                <td>Original</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td>03/17/2024</td>
+                    <td id="table-buttons">
+                        <button type="button" id="edit-button">Edit</button>
+                        <button type="button" id="delete-product">Delete</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </main>
     <footer>
         <nav id="footer-nav-menu">
