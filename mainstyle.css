@@ -51,6 +51,15 @@ h1{
     padding: 0.5em;
 }
 
+button{
+    background-color: goldenrod;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    height: 2.0em;
+    text-transform: uppercase;
+}
+
 .page-divider{
     width: 95%;
     border: 0.03em solid lightgray;
