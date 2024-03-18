@@ -205,6 +205,80 @@
     text-align: center;
 }
 
+/* inventory cards*/
+#inventory-grid-container{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1600px;
+    height: 600px;
+    border: 2px solid black;
+    display: inline;
+}
+
+#product-inventory-card{
+    width: 500px;
+    height: 500px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 5fr 1fr 7fr 1fr;
+    border: 1px solid lightgray;
+    border-radius: 0.5em;
+    padding: 1em;
+
+}
+
+#ic-product-name{
+    text-transform: uppercase;
+    font-size: larger;
+    text-align: center;
+}
+
+#ic-base-price{
+    grid-row: 1 / 2;
+    grid-column: 1 / span end;
+
+    text-align: center;
+    margin: 0em;
+}
+
+#ic-product-description{
+    grid-row: 2 / span end;
+    grid-column: 2 / span end;
+    padding-left: 2.0em;
+    padding-right: 1.0em;
+
+}
+
+#inventory-option-section{
+    grid-row: 4 / 5;
+    grid-column: 1 / span end;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+
+    text-align: center;
+
+}
+
+#canvas-options-inventory-container{
+
+}
+.inventory-option-ppu{
+    display: flex;
+    flex-direction: row;
+    align-items: first baseline;
+}
+
+.quantity{
+    margin-right: 1em;
+    font-size: larger;
+}
+/*  */
+
+
+
 #inventory-table-container{
     margin: 5.0em;
 }
