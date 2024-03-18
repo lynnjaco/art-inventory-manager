@@ -22,8 +22,9 @@
     <main>
         <div id="new-product-manager-section">
             <!-- add product form section -->
-
             <div id="form-container">
+            <fieldset id="form-fieldset">
+                <legend>Add New Product</legend>
                 <form id="add-product-form" name="add-product-form">
                     <label>Product Name</label><input type="text" name="Product Name" required/>
                     <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="Product Image" accept="image/png, image/jpeg">
@@ -79,7 +80,8 @@
                     <label>Product Description</label><input type="text" name="product-description" id="product-description-text" placeholder="Provide product details and helpful information"/>
                     <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
                 </form>
-            </div>
+            </fieldset>
+        </div>
 
             <!-- product preview section-->
             <div id="product-preview-container">
@@ -173,7 +175,6 @@
             <a href="inventory-manager.html">Inventory Manager</a>
             <a href="about.html">About</a>
         </nav>
-        <p id="copyright">© Art Store 2024</p>
         <div id="store-info">
             <h3 id="store-name">Art Store</h3>
             <p>
@@ -183,6 +184,8 @@
                 contact@artstore.com<br>
             </p>
         </div>
+        <p id="copyright">© Art Store 2024</p>
+
     </footer> 
 </body>
 </html>

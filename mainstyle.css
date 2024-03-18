@@ -1,3 +1,43 @@
+body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: white;
+}
+
+main {
+
+}
+header{
+    padding: 2.0em;
+    
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        padding-left: 1.0em;
+        padding-right: 1.0em;
+        color: black;
+    }
+
+    a:hover{
+        color:darkgoldenrod;
+    }
+
+
+}
+
+footer{
+    padding: 1.0em;
+    
+    a {
+        text-decoration: none;
+    }
+
+    nav{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .page-divider{
     width: 95%;
     border: 0.03em solid lightgray;
