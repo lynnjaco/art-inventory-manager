@@ -74,12 +74,19 @@
             margin-left: 0.5em;
         }
         
-        .size-selctions{
+        #canvas-sizes{
             display: none;
-            /* display:flex if parentNode.input is valid */
             flex-direction: row;
             justify-content: space-evenly;
         }
+
+        #photo-sizes{
+            display: none;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+
+    
     }
 
     #add-product-button{
@@ -183,6 +190,28 @@
 
     text-align: center;
 }
+
+#canvas-inventory-preview{
+    display: none;
+}
+#original-inventory-preview{
+    display: none;
+}
+#photo-inventory-preview{
+    display: none;
+}
+
+#sc-preview,
+#mc-preview, 
+#lc-preview, 
+#original-price, 
+#sp-preview, 
+#mp-preview,
+#lp-preview{display: none;}
+
+
+
+
 
 .price-per-unit{
     font-size: larger;

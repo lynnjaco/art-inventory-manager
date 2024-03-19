@@ -9,6 +9,7 @@ const basePrice = addProductForm.addProductForm;
 // option selections
 const canvasOptions = document.querySelector("#canvas-sizes");
 const canvasCheck = document.querySelector("#canvasOptionCheck");
+const canvasSelection = document.querySelector("#canvas-selction");
 const smallCanvasOption = addProductForm.canvasSmall;
 const mediumCanvasOption = addProductForm.canvasMedium;
 const largeCanvasOption = addProductForm.canvasLarge;
@@ -55,7 +56,7 @@ const productInventoryTemplate = document.querySelector("#product-inventory-div"
 
 const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
-// live transfer form data to preview data
+// live transferring form data to preview data
 
 productName.addEventListener('input', (e) => {
     previewListingName.innerHTML = `"${e.target.value}"`;
@@ -73,8 +74,54 @@ productDescription.addEventListener('input', (e) => {
     e.preventDefault();
 }) 
 
+// engage product option checkbox to display inventory inputs and preview
+canvasCheck.addEventListener("click", () => {
+    canvasOptionCheck();
+})
+function canvasOptionCheck() {
+    if (canvasCheck.checked === true) {
+        canvasOptionPreview.style.display = "block";
+        canvasOptions.style.display = "flex";
+    } else {
+        canvasOptionPreview.style.display = "none";
+        canvasOptions.style.display = "none";
+    }
+}
+
+photoCheck.addEventListener("click", () => {
+    photoOptionCheck();
+})
+function photoOptionCheck() {
+    if (photoCheck.checked === true) {
+        photoOptionPreview.style.display = "block";
+        photoOptions.style.display = "flex";
+    } else {
+        photoOptionPreview.style.display = "none";
+        photoOptions.style.display = "none";
+    }
+}
+
+originalCheck.addEventListener("click", () => {
+    originalOptionCheck();
+})
+function originalOptionCheck() {
+    if (originalCheck.checked === true) {
+        originalOptionPreview.style.display = "block";
+    } else {
+        originalOptionPreview.style.display = "none";
+    }
+}
 
 
+
+
+
+
+const lc = document.querySelector("#lc-preview")
+
+function display() {
+    lc.style.display = "inline";
+}
 
     // if option is selected, suboptions will display
 
