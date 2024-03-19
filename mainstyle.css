@@ -1,12 +1,14 @@
 body {
     margin: 0em;
+    padding: 0em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
 }
 
 main {
-
+    margin: 0em;
 }
+
 header{
     padding: 2.0em;
     
@@ -58,6 +60,12 @@ button{
     border-radius: 0.2em;
     height: 2.0em;
     text-transform: uppercase;
+}
+
+button:hover{
+    background-color: white;
+    color: goldenrod;
+    box-shadow: 0.1em 0.1em 0.1em grey;
 }
 
 .page-divider{

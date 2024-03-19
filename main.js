@@ -148,7 +148,7 @@ let ogVal = originalPreview.value;
 originalEditionOption.addEventListener("input", (e) => {
     if(originalEditionOption.checked) {
         ogVal = `$${basePrice.value * 110}`;
-        originalPreview.innerText = `${ogVal}`;
+        originalPreview.innerText = `$${ogVal}`;
         originalPreview.style.display = "flex";
     } else {
         ogVal = 0;
