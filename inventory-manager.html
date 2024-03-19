@@ -43,7 +43,7 @@
                             <div id="options-inventory">
 
                                 <div class="product-option" id="canvas-selction">
-                                    <label class="product-option-label">Canvas Print</label><input type="checkbox" name="Canvas Print"/>
+                                    <label class="product-option-label">Canvas Print</label><input type="checkbox" name="Canvas Print" id="canvasOptionCheck"/>
                                     <div class="size-selctions" id="canvas-sizes">
                                         <div class="size-option-quantity">
                                             <label>12 x 16</label><input class="quantity"  type="number" name="canvasSmall" id="canvas-small" placeholder="0" value="0"/>
@@ -58,7 +58,7 @@
                                 </div>
                                 <br>
                                 <div class="product-option" id="photo-selction">
-                                    <label class="product-option-label">Photo Print</label><input type="checkbox" name="Photo Print"/>
+                                    <label class="product-option-label">Photo Print</label><input type="checkbox" name="Photo Print" id="photoOptionCheck"/>
                                     <div class="size-selctions" id="photo-sizes">
                                         <div class="size-option-quantity">
                                             <label>12 x 16</label><input class="quantity"  type="number" name="photoSmall" id="photo-small" placeholder="0" value="0"/>
@@ -73,14 +73,14 @@
                                 </div> 
                                 <br>
                                 <div class="product-option" id="original-selction">
-                                    <label class="product-option-label">Original</label><input type="checkbox" name="theOriginal" value="0"/>
+                                    <label class="product-option-label">Original</label><input type="checkbox" name="theOriginal" value="0" id="originalOptionCheck"/>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
 
                     <div class="adp-element">
-                        <label>Product Description</label><input type="text" name="productDescription" id="product-description-input" placeholder="Provide product details and helpful information"/>
+                        <label>Product Description</label><input type="text" name="productDescription" id="product-description-input" placeholder="150 character limit" maxlength="150"/>
                     </div>
                     <div class="adp-element">
                         <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>

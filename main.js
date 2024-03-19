@@ -8,13 +8,16 @@ const basePrice = addProductForm.addProductForm;
 
 // option selections
 const canvasOptions = document.querySelector("#canvas-sizes");
+const canvasCheck = document.querySelector("#canvasOptionCheck");
 const smallCanvasOption = addProductForm.canvasSmall;
 const mediumCanvasOption = addProductForm.canvasMedium;
 const largeCanvasOption = addProductForm.canvasLarge;
 
 const originalEditionOption = addProductForm.theOriginal;
+const originalCheck = document.querySelector("#originalOptionCheck");
 
 const photoOptions = document.querySelector("#photo-sizes");
+const photoCheck = document.querySelector("#photoOptionCheck");
 const smallPhotoOption = addProductForm.photoSmall;
 const mediumPhotoOption = addProductForm.photoMedium;
 const largePhotoOption = addProductForm.canvasLarge;
@@ -54,10 +57,23 @@ const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
 // live transfer form data to preview data
 
-pna.addEventListener('input', (e) => {
-    previewListingName.innerHTML=e.target.value;
-    console.log("Hi");
-   })   
+productName.addEventListener('input', (e) => {
+    previewListingName.innerHTML = `"${e.target.value}"`;
+    e.preventDefault();
+}) 
+
+productImage.addEventListener('input', (e) => {
+    let url = URL.createObjectURL(e.target.files[0]);
+    previewProductImage.style.backgroundImage = "url(" + url + ")";
+    e.preventDefault();
+}) 
+
+productDescription.addEventListener('input', (e) => {
+    previewProductDesc.innerHTML = e.target.value;
+    e.preventDefault();
+}) 
+
+
 
 
     // if option is selected, suboptions will display
