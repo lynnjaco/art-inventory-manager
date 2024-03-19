@@ -84,7 +84,6 @@ function photoOptionCheck() {
     }
 }
 
-
 const originalEditionOption = addProductForm.theOriginal;
 const originalCheck = document.querySelector("#originalOptionCheck");
 originalCheck.addEventListener("input", (e) => {
@@ -147,7 +146,7 @@ largeCanvasOption.addEventListener("input", (e) => {
 let ogVal = originalPreview.value;
 originalEditionOption.addEventListener("input", (e) => {
     if(originalEditionOption.checked) {
-        ogVal = `$${basePrice.value * 110}`;
+        ogVal = basePrice.value * 110;
         originalPreview.innerText = `$${ogVal}`;
         originalPreview.style.display = "flex";
     } else {
@@ -242,38 +241,13 @@ submitButton.addEventListener("click", (e) => {
     console.log(productTemplateCopy);
 })
 
-// function populateProductTemplate(productTemplateCopy){
-//     cardTemplate.querySelector("#ic-product-name").textContent = productName.value;
-//     cardTemplate.querySelector("#date-added").textContent = new Date();
+// delete product listing button
+const deleteButtons = document.querySelectorAll("[name='deleteProduct']");
+for (let button of deleteButtons) {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.currentTarget.parentNode.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode.parentNode);
+    })
+}
 
-//     cardTemplate.querySelector("#ic-image-preview").style.backgroundImage = "url(" + URL.createObjectURL(productImage.target.files[0]) + ")";
-//     cardTemplate.querySelector("#ic-product-description").textContent = productDescription.value;
-    
-//     cardTemplate.querySelector("#ic-small-canvas-quantity").textContent = smallCanvasOption.value;
-//     cardTemplate.querySelector("#ic-sc-ppu").textContent = `$${scVal}`;
-
-//     cardTemplate.querySelector("#ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
-//     cardTemplate.querySelector("#ic-mc-ppu").textContent = `$${mcVal}`;
-
-//     cardTemplate.querySelector("#ic-large-canvas-quantity").textContent = largeCanvasOption.value;
-//     cardTemplate.querySelector("#ic-lc-ppu").textContent = `$${lcVal}`;
-
-//     cardTemplate.querySelector("#ic-og-price").textContent;
-//     originalOptionCheck.checked === true ? cardTemplate.querySelector("#og-quantity").textContent = "1" : "0";
-
-//     cardTemplate.querySelector("#ic-small-photo-quantity").textContent = smallPhotoOption.value;
-//     cardTemplate.querySelector("#ic-sp-ppu").textContent = `$${spVal}`;
-
-//     cardTemplate.querySelector("#ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
-//     cardTemplate.querySelector("#ic-mp-ppu").textContent = `$${mpVal}`;
-
-//     cardTemplate.querySelector("#ic-large-photo-quantity").textContent = largePhotoOption.value;
-//     cardTemplate.querySelector("#ic-lp-ppu").textContent = `$${lpVal}`;
-
-//     return cardTemplate;
-// }
-
-
-
-
-// calculate total inventory value
+// calculate total inventory val
