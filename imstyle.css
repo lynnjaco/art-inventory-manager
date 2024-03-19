@@ -207,7 +207,10 @@
 #original-price, 
 #sp-preview, 
 #mp-preview,
-#lp-preview{display: none;}
+#lp-preview{display: none;
+justify-content: space-evenly;
+
+}
 
 
 

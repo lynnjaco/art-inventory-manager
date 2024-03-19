@@ -33,7 +33,7 @@ const previewListingName = document.querySelector("#listing-name");
 const previewProductImage = document.querySelector("#image-preview");
 const previewProductDesc = document.querySelector("#listing-description");
 
-// option price pewview parent containers
+// option price preview parent containers
 const canvasOptionPreview = document.querySelector("#canvas-inventory-preview");
 const originalOptionPreview = document.querySelector("#original-inventory-preview");
 const photoOptionPreview = document.querySelector("#photo-inventory-preview");
@@ -51,13 +51,10 @@ const largerPhotoPreview = document.querySelector("#lp-preview");
 
 // TOTAL INVENTORY VALUE
 const totalInventoryValue = document.querySelector("#total-value");
-
 const productInventoryTemplate = document.querySelector("#product-inventory-div").content;
-
 const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
 // live transferring form data to preview data
-
 productName.addEventListener('input', (e) => {
     previewListingName.innerHTML = `"${e.target.value}"`;
     e.preventDefault();
@@ -75,8 +72,9 @@ productDescription.addEventListener('input', (e) => {
 }) 
 
 // engage product option checkbox to display inventory inputs and preview
-canvasCheck.addEventListener("click", () => {
+canvasCheck.addEventListener("input", () => {
     canvasOptionCheck();
+    e.preventDefault();
 })
 function canvasOptionCheck() {
     if (canvasCheck.checked === true) {
@@ -88,8 +86,9 @@ function canvasOptionCheck() {
     }
 }
 
-photoCheck.addEventListener("click", () => {
+photoCheck.addEventListener("input", () => {
     photoOptionCheck();
+    e.preventDefault();
 })
 function photoOptionCheck() {
     if (photoCheck.checked === true) {
@@ -101,8 +100,9 @@ function photoOptionCheck() {
     }
 }
 
-originalCheck.addEventListener("click", () => {
+originalCheck.addEventListener("input", () => {
     originalOptionCheck();
+    e.preventDefault();
 })
 function originalOptionCheck() {
     if (originalCheck.checked === true) {
@@ -113,17 +113,58 @@ function originalOptionCheck() {
 }
 
 
+// transfer inventory amount inputs to the preview screen
+originalEditionOption.addEventListener("input", (e) => {
+    let ogVal = originalPreview.value;
+    if(originalEditionOption.checked) {
+        ogVal = `$${basePrice.value * 50}`;
+        originalPreview.innerText = `${ogVal}`;
+        originalPreview.style.display = "flex";
+    } else {
+        ogVal = 0;
+        originalPreview.innerText = "";
+        originalPreview.style.display = "none";
+    } 
+    e.preventDefault();
+})
+
+smallCanvasOption.addEventListener("input", (e) => {
+    let scVal = smallCanvasPreview.value;
+
+    if(e.target.value > 0) {
+        scVal = basePrice.value * 20;
+        smallCanvasPreview.textContent = `12 x 16 | $${scVal}`;
+        smallCanvasPreview.style.display = "flex";
+    } else {
+        scVal = 0;
+        smallCanvasPreview.innerHTML = "";
+        smallCanvasPreview.style.display = "none";
+    }
+    
+    e.preventDefault();
+})
+
+    let mcVal = mediumCanvasPreview.value;
+    mcVal = `$${basePrice.value * 40}`;
+    mediumCanvasPreview.innerText = mcVal;
+
+    let lcVal = largeCanvasPreview.value;
+    lcVal = `$${basePrice.value * 60}`;
+    largeCanvasPreview.innerText = lcVal;
 
 
+    let spVal = smallPhotoPreview.value;
+    spVal = `$${basePrice.value * 10}`;
+    smallPhotoPreview.innerText = spVal;
 
+    let mpVal = mediumPhotoPreview.value;
+    mpVal = `$${basePrice.value * 20}`;
+    mediumPhotoPreview.innerText = mpVal;
 
-const lc = document.querySelector("#lc-preview")
+    let lpVal = largerPhotoPreview.value;
+    lpVal = `$${basePrice.value * 30}`;
+    largerPhotoPreview.innerText = lpVal;
 
-function display() {
-    lc.style.display = "inline";
-}
-
-    // if option is selected, suboptions will display
 
 
 // calculate total inventory value
