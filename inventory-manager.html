@@ -94,9 +94,11 @@
             <div id="product-preview-container">
                 <fieldset id="preview-fieldset">
                     <legend id="product-preview-legend">Product Specification Preview</legend>
-                    <h4 id="listing-name"></h4>
+                    <h2 id="listing-name"></h2>
                     <div id="product-specs">
-                        <div id="image-preview"></div>
+                        <div class="image-preview-container">
+                            <img src="https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="image preview" id="image-preview">
+                        </div>
                         <h5 id="listing-price"><span id="product-price-range"></span></h5>
                         <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                     </div>
@@ -142,7 +144,9 @@
                     <legend id="ic-product-name">Product Name</legend>
                     <h4 id="ic-base-price">Base Price</h4>
                     <div id="product-specs">
-                        <div id="ic-image-preview"></div>
+                        <div class="ic-image-preview-container">
+                            <img alt="image preview" id="ic-image-preview">
+                        </div>
                         <h5 id="listing-price">Product Price</h5>
                         <p id="ic-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                     </div>
@@ -206,15 +210,15 @@
             </div>
 
 
-            <template id="product-inventory-div">
-                <div id="product-card-container">
-                    <fieldset id="product-inventory-card">
-                        <legend id="ic-product-name"></legend>
-                        <h4 id="date-added"></h4>
-                        <div id="product-specs">
-                            <div id="ic-image-preview"></div>
+            <template class="product-inventory-div">
+                <div class="product-card-container">
+                    <fieldset class="product-inventory-card">
+                        <legend class="ic-product-name"></legend>
+                        <h4 class="date-added"></h4>
+                        <div class="product-specs">
+                            <div class="ic-image-preview"></div>
                             <h5 id="date-added"></h5>
-                            <p id="ic-product-description"></p>
+                            <p class="ic-product-description"></p>
                         </div>
                         <div id="line-break"><hr></div>
 

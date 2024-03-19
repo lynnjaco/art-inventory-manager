@@ -37,7 +37,7 @@ productName.addEventListener('input', (e) => {
 const productImage = addProductForm.productImage;
 productImage.addEventListener('input', (e) => {
     let url = URL.createObjectURL(e.target.files[0]);
-    previewProductImage.style.backgroundImage = "url(" + url + ")";
+    previewProductImage.setAttribute("src", url);
     e.preventDefault();
 }) 
 
@@ -205,16 +205,16 @@ largePhotoOption.addEventListener("input", (e) => {
 const inventoryContainer = document.querySelector("#inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 
-const productInventoryTemplate = document.querySelector("#product-inventory-div").content;
+const productInventoryTemplate = document.querySelector(".product-inventory-div").content;
 const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
-    productTemplateCopy.querySelector("#ic-product-name").textContent = productName.value;
-    // productTemplateCopy.querySelector("#date-added").textContent = new Date();
+    productTemplateCopy.querySelector(".ic-product-name").textContent = productName.value;
+    // productTemplateCopy.querySelector(".date-added").textContent = new Date();
     
-    productTemplateCopy.querySelector("#ic-image-preview").style.backgroundImage = "url(" + URL.createObjectURL(productImage.files[0]) + ")";
-    productTemplateCopy.querySelector("#ic-product-description").textContent = productDescription.value;
+    productTemplateCopy.querySelector(".ic-image-preview").style.backgroundImage = "url(" + URL.createObjectURL(productImage.files[0]) + ")";
+    productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
     
     productTemplateCopy.querySelector("#ic-small-canvas-quantity").textContent = smallCanvasOption.value;
     productTemplateCopy.querySelector("#ic-sc-ppu").textContent = `$${scVal}`;
