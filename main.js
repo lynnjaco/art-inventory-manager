@@ -2,24 +2,24 @@
 const addProductForm = document.querySelector("#add-product-form");
 
 // form inputs
-const productName = addProductForm.productName.value;
-const productImage = addProductForm.productImage.value;
-const basePrice = addProductForm.addProductForm.value;
+const productName = addProductForm.productName;
+const productImage = addProductForm.productImage;
+const basePrice = addProductForm.addProductForm;
 
 // option selections
 const canvasOptions = document.querySelector("#canvas-sizes");
-const smallCanvasOption = addProductForm.canvas-small.value;
-const mediumCanvasOption = addProductForm.canvas-medium.value;
-const largeCanvasOption = addProductForm.canvas-large.value;
+const smallCanvasOption = addProductForm.canvasSmall;
+const mediumCanvasOption = addProductForm.canvasMedium;
+const largeCanvasOption = addProductForm.canvasLarge;
 
-const originalEditionOption = addProductForm.the-original.value;
+const originalEditionOption = addProductForm.theOriginal;
 
 const photoOptions = document.querySelector("#photo-sizes");
-const smallPhotoOption = addProductForm.photo-small.value;
-const mediumPhotoOption = addProductForm.photo-medium.value;
-const largePhotoOption = addProductForm.canvas-large.value;
+const smallPhotoOption = addProductForm.photoSmall;
+const mediumPhotoOption = addProductForm.photoMedium;
+const largePhotoOption = addProductForm.canvasLarge;
 
-const productDescription = addProductForm.product-description.value;
+const productDescription = addProductForm.productDescription;
 
 // form submit button
 const submitButton = document.querySelector("#add-product-button");
@@ -46,8 +46,23 @@ const mediumPhotoPreview = document.querySelector("#mp-preview");
 const largerPhotoPreview = document.querySelector("#lp-preview");
 
 // TOTAL INVENTORY VALUE
-const totalInventoryValue = document.querySelector("#total-value")
+const totalInventoryValue = document.querySelector("#total-value");
 
 const productInventoryTemplate = document.querySelector("#product-inventory-div").content;
 
 const productTemplateCopy = document.importNode(productInventoryTemplate, true);
+
+// live transfer form data to preview data
+
+pna.addEventListener('input', (e) => {
+    previewListingName.innerHTML=e.target.value;
+    console.log("Hi");
+   })   
+
+
+    // if option is selected, suboptions will display
+
+
+// calculate total inventory value
+
+// add product button > adds product inventory card
