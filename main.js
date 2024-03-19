@@ -21,7 +21,7 @@ const photoOptions = document.querySelector("#photo-sizes");
 const photoCheck = document.querySelector("#photoOptionCheck");
 const smallPhotoOption = addProductForm.photoSmall;
 const mediumPhotoOption = addProductForm.photoMedium;
-const largePhotoOption = addProductForm.canvasLarge;
+const largePhotoOption = addProductForm.photoLarge;
 
 const productDescription = addProductForm.productDescription;
 
@@ -41,13 +41,13 @@ const photoOptionPreview = document.querySelector("#photo-inventory-preview");
 // option price previews
 const smallCanvasPreview = document.querySelector("#sc-preview");
 const mediumCanvasPreview = document.querySelector("#mc-preview");
-const largerCanvasPreview = document.querySelector("#lc-preview");
+const largeCanvasPreview = document.querySelector("#lc-preview");
 
 const originalPreview = document.querySelector("#original-price");
 
 const smallPhotoPreview = document.querySelector("#sp-preview");
 const mediumPhotoPreview = document.querySelector("#mp-preview");
-const largerPhotoPreview = document.querySelector("#lp-preview");
+const largePhotoPreview = document.querySelector("#lp-preview");
 
 // TOTAL INVENTORY VALUE
 const totalInventoryValue = document.querySelector("#total-value");
@@ -72,7 +72,7 @@ productDescription.addEventListener('input', (e) => {
 }) 
 
 // engage product option checkbox to display inventory inputs and preview
-canvasCheck.addEventListener("input", () => {
+canvasCheck.addEventListener("input", (e) => {
     canvasOptionCheck();
     e.preventDefault();
 })
@@ -117,7 +117,7 @@ function originalOptionCheck() {
 originalEditionOption.addEventListener("input", (e) => {
     let ogVal = originalPreview.value;
     if(originalEditionOption.checked) {
-        ogVal = `$${basePrice.value * 50}`;
+        ogVal = `$${basePrice.value * 110}`;
         originalPreview.innerText = `${ogVal}`;
         originalPreview.style.display = "flex";
     } else {
@@ -130,7 +130,6 @@ originalEditionOption.addEventListener("input", (e) => {
 
 smallCanvasOption.addEventListener("input", (e) => {
     let scVal = smallCanvasPreview.value;
-
     if(e.target.value > 0) {
         scVal = basePrice.value * 20;
         smallCanvasPreview.textContent = `12 x 16 | $${scVal}`;
@@ -140,32 +139,81 @@ smallCanvasOption.addEventListener("input", (e) => {
         smallCanvasPreview.innerHTML = "";
         smallCanvasPreview.style.display = "none";
     }
-    
     e.preventDefault();
 })
 
+mediumCanvasOption.addEventListener("input", (e) => {
     let mcVal = mediumCanvasPreview.value;
-    mcVal = `$${basePrice.value * 40}`;
-    mediumCanvasPreview.innerText = mcVal;
+    if(e.target.value > 0) {
+        mcVal = basePrice.value * 40;
+        mediumCanvasPreview.textContent = `24 x 32 | $${mcVal}`;
+        mediumCanvasPreview.style.display = "flex";
+    } else {
+        mcVal = 0;
+        mediumCanvasPreview.innerHTML = "";
+        mediumCanvasPreview.style.display = "none";
+    }
+    e.preventDefault();
+})
 
+largeCanvasOption.addEventListener("input", (e) => {
     let lcVal = largeCanvasPreview.value;
-    lcVal = `$${basePrice.value * 60}`;
-    largeCanvasPreview.innerText = lcVal;
+    if(e.target.value > 0) {
+        lcVal = basePrice.value * 60;
+        largeCanvasPreview.textContent = `36 x 48 | $${lcVal}`;
+        largeCanvasPreview.style.display = "flex";
+    } else {
+        lcVal = 0;
+        largeCanvasPreview.innerHTML = "";
+        largeCanvasPreview.style.display = "none";
+    }
+    e.preventDefault();
+})
 
 
+
+
+smallPhotoOption.addEventListener("input", (e) => {
     let spVal = smallPhotoPreview.value;
-    spVal = `$${basePrice.value * 10}`;
-    smallPhotoPreview.innerText = spVal;
+    if(e.target.value > 0) {
+        spVal = basePrice.value * 10;
+        smallPhotoPreview.textContent = `12 x 16 | $${spVal}`;
+        smallPhotoPreview.style.display = "flex";
+    } else {
+        spVal = 0;
+        smallPhotoPreview.innerHTML = "";
+        smallPhotoPreview.style.display = "none";
+    }
+    e.preventDefault();
+})
 
+mediumPhotoOption.addEventListener("input", (e) => {
     let mpVal = mediumPhotoPreview.value;
-    mpVal = `$${basePrice.value * 20}`;
-    mediumPhotoPreview.innerText = mpVal;
+    if(e.target.value > 0) {
+        mpVal = basePrice.value * 20;
+        mediumPhotoPreview.textContent = `24 x 32 | $${mpVal}`;
+        mediumPhotoPreview.style.display = "flex";
+    } else {
+        mpVal = 0;
+        mediumPhotoPreview.innerHTML = "";
+        mediumPhotoPreview.style.display = "none";
+    }
+    e.preventDefault();
+})
 
-    let lpVal = largerPhotoPreview.value;
-    lpVal = `$${basePrice.value * 30}`;
-    largerPhotoPreview.innerText = lpVal;
-
-
+largePhotoOption.addEventListener("input", (e) => {
+    let lpVal = largePhotoPreview.value;
+    if(e.target.value > 0) {
+        lpVal = basePrice.value * 30;
+        largePhotoPreview.textContent = `36 x 48 | $${lpVal}`;
+        largePhotoPreview.style.display = "flex";
+    } else {
+        lpVal = 0;
+        largePhotoPreview.innerHTML = "";
+        largePhotoPreview.style.display = "none";
+    }
+    e.preventDefault();
+})
 
 // calculate total inventory value
 
