@@ -239,7 +239,7 @@ justify-content: space-evenly;
 }
 
 /* inventory cards*/
-#inventory-grid-container{
+#inventory-container{
     margin-left: auto;
     margin-right: auto;
     margin-top: 2.0em;
@@ -251,6 +251,14 @@ justify-content: space-evenly;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+#container{
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
 }
 
 #product-inventory-card{
