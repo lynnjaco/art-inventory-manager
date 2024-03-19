@@ -28,13 +28,13 @@
                 <legend id="product-options-legend">Add New Product</legend>
                 <form id="add-product-form" name="add-product-form">
                     <div class="adp-element">
-                        <label>Product Name</label><input type="text" name="Product Name" id="product-name-input"required/>
+                        <label>Product Name</label><input type="text" name="productName" id="product-name-input"required/>
                     </div>
                     <div class="adp-element">
-                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="Product Image" accept="image/png, image/jpeg">
+                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg">
                     </div>
                     <div class="adp-element">
-                        <label>Base Price</label><input type="number" placeholder="$" name="Base Price" id="base-price" required/>
+                        <label>Base Price</label><input type="number" placeholder="$" name="addProductForm" id="base-price" required/>
                     </div>
 
                     <div class="adp-element">
@@ -105,9 +105,9 @@
                         <div id="canvas-inventory-preview">
                             <h4>Canvas Prints</h4>
                             <p>price per unit</p>
-                            <p>12 x 16 <span class="price-per-unit">$0</span></p>
-                            <p>24 x 32 <span class="price-per-unit">$0</span></p>
-                            <p>36 x 48 <span class="price-per-unit">$0</span></p>
+                            <p id="sc-preview">12 x 16 <span class="price-per-unit">$0</span></p>
+                            <p id="mc-preview">24 x 32 <span class="price-per-unit">$0</span></p>
+                            <p id="lc-preview">36 x 48 <span class="price-per-unit">$0</span></p>
                         </div>
                         <div id="original-inventory-preview">
                             <h4>Original</h4>
@@ -117,9 +117,9 @@
                         <div id="photo-inventory-preview">
                             <h4>Photo Prints</h4>
                             <p>price per unit</p>
-                            <p>12 x 16 <span class="price-per-unit">$0</span></p>
-                            <p>24 x 32 <span class="price-per-unit">$0</span></p>
-                            <p>36 x 48 <span class="price-per-unit">$0</span></p>
+                            <p id="sp-preview">12 x 16 <span class="price-per-unit">$0</span></p>
+                            <p id="mp-preview">24 x 32 <span class="price-per-unit">$0</span></p>
+                            <p id="lp-preview">36 x 48 <span class="price-per-unit">$0</span></p>
                         </div>
                     </div>
 
@@ -133,7 +133,8 @@
             <h3 id="total-value-text">Total Value Of Current Inventory:</h3>
             <h2 id="total-value">$10543.69</h2>
         </div>
-              
+        
+        <template id="product-inventory-div">
         <div id="inventory-grid-container">
                 <fieldset id="product-inventory-card">
                     <legend id="ic-product-name">Product Name</legend>
@@ -202,6 +203,7 @@
 
                 </fieldset>
         </div>
+        </template>
         
     </main>
     <footer>
