@@ -205,42 +205,59 @@ largePhotoOption.addEventListener("input", (e) => {
 const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 
-
-
 addProductForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
+
     productTemplateCopy.querySelector(".ic-product-name").textContent = productName.value;
-    previewListingName.innerHTML = "";
-    // productTemplateCopy.querySelector(".date-added").textContent = new Date();
+    previewListingName.innerText = "";
+
+    const date = new Date();
+    productTemplateCopy.querySelector(".ic-base-price").textContent = date.toDateString();
+
     let url = URL.createObjectURL(productImage.files[0]);
     
     productTemplateCopy.querySelector(".ic-image-preview").setAttribute("src", url);
     productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
-    previewProductImage.setAttribute("src", "")
+    previewProductImage.setAttribute("src", "URL('assets/artstorelogo.png')");
     
     productTemplateCopy.querySelector(".ic-small-canvas-quantity").textContent = smallCanvasOption.value;
     productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}`;
+    smallCanvasPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
     productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}`;
+    mediumCanvasPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-large-canvas-quantity").textContent = largeCanvasOption.value;
     productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}`;
+    largeCanvasPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}`;
     originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
+    originalPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
     productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}`;
+    smallPhotoPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
     productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}`;
+    mediumPhotoPreview.innerText = "";
 
     productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
     productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
+    largePhotoPreview.innerText = "";
+
     inventoryContainer.appendChild(productTemplateCopy);
+    addProductForm.reset();
+})
+
+// reset add product form
+const resetFormButton = document.querySelector("#reset-form-button");
+resetFormButton.addEventListener("click", (e) => {
+    e.preventDefault();
     addProductForm.reset();
 })
 

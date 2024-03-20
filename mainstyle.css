@@ -8,7 +8,12 @@ main {
     margin: 0em;
 }
 
-header{    
+header{  
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    align-items: center;
+
     a {
         text-decoration: none;
         text-transform: uppercase;
@@ -47,9 +52,8 @@ h1{
     color: white;
     background-color: black;
 
-    @media (width < 1600px) {
-        text-align: center;
-        
+    @media (width < 800px) {
+        text-align: center;   
     }
 }
 
@@ -73,4 +77,11 @@ button:hover{
     border: 0.03em solid lightgray;
     margin-top:3.0em;
     margin-bottom: 3.0em;
+}
+
+#header-logo{
+    height: 5em;
+    width: auto;
+    margin-right: 2em;
+    margin-left: 2em;
 }

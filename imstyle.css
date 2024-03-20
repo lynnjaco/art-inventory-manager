@@ -4,6 +4,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-around;
+    margin-top: 5em;
+    margin-bottom: 5em;
 }
 
 #product-preview-legend, #product-options-legend{
@@ -14,10 +17,9 @@
 
 /* add product form container */
 #form-container{
-    padding: 3em;
-    height: 40em;
-    min-width: 45em; 
-    width: 60em;
+    height: 30em;
+    min-width: 40em; 
+    width: 50em;
 }
 
 #form-fieldset{
@@ -94,7 +96,7 @@
         }
     }
 
-    #add-product-button{
+    #add-product-button, #reset-form-button{
         margin-top: 0.3em;
         width: 25%;
     }
@@ -102,14 +104,10 @@
 
 /* add product preview container */
 #product-preview-container {
-    padding: 3em;
-    height: 40em;
-    min-width: 45em; 
-    width: 60em;
+    height: 30em;
+    min-width: 40em; 
+    width: 50em;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #preview-fieldset {
@@ -119,7 +117,6 @@
     grid-template-rows: 1fr 5fr 1fr 7fr 1fr;
     border: 1px solid lightgray;
     border-radius: 0.5em;
-    padding: 1em;
 }
 
 #listing-name{
@@ -138,7 +135,6 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin: 2em;
 }
 
 .product-specs {
@@ -149,11 +145,10 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    margin: 2em;
 }
 
 .image-preview-container{
-    height: 15em;
+    height: 10em;
     min-width: 30%;
 
     display: flex;
@@ -168,7 +163,6 @@
     }
 }
 
-
 #listing-price{
     grid-row: 1 / 2;
     grid-column: 2 / span end;
@@ -182,8 +176,6 @@
 }
 
 #listing-description {
-    display: flex;
-    justify-content: center;
     text-align: left;
 }
 
@@ -270,7 +262,7 @@
 }
 
 .product-inventory-card{
-    width: 35em;
+    width: 30em;
     height: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -298,7 +290,7 @@
 }
 
 .ic-image-preview-container{
-    height: 15em;
+    height: 10em;
     min-width: 30%;
 
     display: flex;
@@ -323,6 +315,7 @@
 .inventory-option-section{
     grid-row: 4 / 5;
     grid-column: 1 / span end;
+    height: 30em;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -367,7 +360,7 @@
 }
 /*  */
 
-@media (width < 1600px) {
+@media (width < 700px) {
     h1{
         text-align: center;
     }
@@ -384,8 +377,6 @@
         text-align: center;
     }
 }
-
-
 
 /* 
 #inventory-table-container{

@@ -16,8 +16,10 @@
             <a href="inventory-manager.html">Inventory Manager</a>
             <a href="about.html">About</a>
         </nav>  
-        <div id="logo-block"></div>
-        <div id="logo-text"></div>
+        <div id="logo-block">
+            <img src="assets/artstorelogo.png" alt="logo" id="header-logo"/>
+        </div>
+        
     </header>
     <main>
         <h1 id="ims-heading">Inventory Management System</h1>
@@ -31,7 +33,7 @@
                         <label>Product Name</label><input type="text" name="productName" id="product-name-input"required/>
                     </div>
                     <div class="adp-element">
-                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg">
+                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg" required>
                     </div>
                     <div class="adp-element">
                         <label>Base Price</label><input type="number" placeholder="$" name="addProductForm" id="base-price" min="1" value="1" required/>
@@ -85,6 +87,9 @@
                     <div class="adp-element">
                         <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
                     </div>
+                    <div class="adp-element">
+                        <button type="submit" id="reset-form-button" form="reset-form-button">Reset Form</button>
+                    </div>
                     
                 </form>
             </fieldset>
@@ -97,7 +102,7 @@
                     <h2 id="listing-name"></h2>
                     <div id="product-specs-preview">
                         <div class="image-preview-container">
-                            <img src="https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="image preview" id="image-preview">
+                            <img src="assets/artstorelogo.png" alt="image preview" id="image-preview">
                         </div>
                         <h5 id="listing-price"><span id="product-price-range"></span></h5>
                         <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
@@ -131,22 +136,22 @@
 
         <h2 id="inventory-heading">Current Inventory</h2>
 
-        <div id="inventory-total-value">
+        <!-- <div id="inventory-total-value">
             <h3 id="total-value-text">Total Value Of Current Inventory:</h3>
             <h2 id="total-value">$</h2>
-        </div>
+        </div> -->
         
         <div class="inventory-container">
             <template name="product-inventory-div">
                 <div class="inventory-grid-container">
                     <fieldset class="product-inventory-card">
-                        <legend class="ic-product-name">Product Name</legend>
-                        <h4 class="ic-base-price">Base Price</h4>
+                        <legend class="ic-product-name"></legend>
+                        <h4 class="ic-base-price"></h4>
                         <div class="product-specs">
                             <div class="ic-image-preview-container">
-                                <img alt="image preview" class="ic-image-preview">
+                                <img alt="image preview" class="ic-image-preview" src="assets/artstorelogo.png">
                             </div>
-                            <p class="ic-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
+                            <p class="ic-product-description"></p>
                         </div>
                         <div class="line-break"><hr></div>
 
@@ -155,45 +160,45 @@
                             <div class="canvas-options-inventory-container">
                                 <h4>Canvas Prints</h4>
                                 <div class="inventory-option-ppu small-canvas-inventory-info">
-                                    <span class="ic-small-canvas-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-small-canvas-quantity"><p class="quantity"></p></span>
                                     <p>12 x 16</p>
-                                    <p class="price-per-unit ic-sc-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-sc-ppu"></p>
                                 </div>
                                 <div class="inventory-option-ppu medium-canvas-inventory-info">
-                                    <span class="ic-medium-canvas-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-medium-canvas-quantity"><p class="quantity"></p></span>
                                     <p>24 x 32</p>
-                                    <p class="price-per-unit ic-mc-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-mc-ppu"></p>
                                 </div>
                                 <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
-                                    <span class="ic-large-canvas-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-large-canvas-quantity"><p class="quantity"></p></span>
                                     <p>36 x 48</p>
-                                    <p class="price-per-unit ic-lc-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-lc-ppu"></p>
                                 </div>
                             </div>
                                 
                             <div class="original-option-inventory">
                                 <h4>Original</h4>
                                 <div class="inventory-option-ppu original-inventory-info">
-                                    <p class="price-per-unit ic-og-price">$0</p>
+                                    <p class="price-per-unit ic-og-price"></p>
                                 </div>
                             </div>
 
                             <div class="photo-options-inventory-container">
                                 <h4>Photo Prints</h4>
                                 <div class="inventory-option-ppu small-photo-inventory-info">
-                                    <span class="ic-small-photo-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-small-photo-quantity"><p class="quantity"></p></span>
                                     <p>12 x 16</p>
-                                    <p class="price-per-unit ic-sp-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-sp-ppu"></p>
                                 </div>
                                 <div class="inventory-option-ppu small-photo-inventory-info">
-                                    <span class="ic-medium-photo-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-medium-photo-quantity"><p class="quantity"></p></span>
                                     <p>24 x 32</p>
-                                    <p class="price-per-unit ic-mp-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-mp-ppu"></p>
                                 </div>
                                 <div class="inventory-option-ppu small-photo-inventory-info">
-                                    <span class="ic-large-photo-quantity"><p class="quantity">20</p></span>
+                                    <span class="ic-large-photo-quantity"><p class="quantity"></p></span>
                                     <p>36 x 48</p>
-                                    <p class="price-per-unit ic-lp-ppu">$0 ppu</p>
+                                    <p class="price-per-unit ic-lp-ppu"></p>
                                 </div>
                             </div>
                         </div>
