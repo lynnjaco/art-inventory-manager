@@ -95,14 +95,14 @@
                 <fieldset id="preview-fieldset">
                     <legend id="product-preview-legend">Product Specification Preview</legend>
                     <h2 id="listing-name"></h2>
-                    <div id="product-specs">
+                    <div id="product-specs-preview">
                         <div class="image-preview-container">
                             <img src="https://images.pexels.com/photos/1690351/pexels-photo-1690351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="image preview" id="image-preview">
                         </div>
                         <h5 id="listing-price"><span id="product-price-range"></span></h5>
                         <p id="listing-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                     </div>
-                    <div id="line-break"><hr></div>
+                    <div class="line-break"><hr></div>
                     <div id="inventory-price-preview">
                         <div id="canvas-inventory-preview">
                             <h4>Canvas Prints</h4>
@@ -136,137 +136,64 @@
             <h2 id="total-value">$</h2>
         </div>
         
-        <div id="inventory-container">
-
-            
-            <div id="inventory-grid-container">
-                <fieldset id="product-inventory-card">
-                    <legend id="ic-product-name">Product Name</legend>
-                    <h4 id="ic-base-price">Base Price</h4>
-                    <div id="product-specs">
-                        <div class="ic-image-preview-container">
-                            <img alt="image preview" id="ic-image-preview">
-                        </div>
-                        <h5 id="listing-price">Product Price</h5>
-                        <p id="ic-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
-                    </div>
-                    <div id="line-break"><hr></div>
-
-
-                    <div id="inventory-option-section">
-                        <div id="canvas-options-inventory-container">
-                            <h4>Canvas Prints</h4>
-                            <div class="inventory-option-ppu" id="small-canvas-inventory-info">
-                                <span id="ic-small-canvas-quantity"><p class="quantity">20</p></span>
-                                <p>12 x 16</p>
-                                <p class="price-per-unit" id="ic-sc-ppu">$0 ppu</p>
-                            </div>
-                            <div class="inventory-option-ppu" id="medium-canvas-inventory-info">
-                                <span id="ic-medium-canvas-quantity"><p class="quantity">20</p></span>
-                                <p>24 x 32</p>
-                                <p class="price-per-unit" id="ic-mc-ppu">$0 ppu</p>
-                            </div>
-                            <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
-                                <span id="ic-large-canvas-quantity"><p class="quantity">20</p></span>
-                                <p>36 x 48</p>
-                                <p class="price-per-unit" id="ic-lc-ppu">$0 ppu</p>
-                            </div>
-                        </div>
-                            
-                        <div id="original-option-inventory">
-                            <h4>Original</h4>
-                            <div class="inventory-option-ppu" id="original-inventory-info">
-                                <p class="price-per-unit" id="ic-og-price">$0</p>
-                            </div>
-                        </div>
-
-                        <div id="photo-options-inventory-container">
-                            <h4>Photo Prints</h4>
-                            <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                <span id="ic-small-photo-quantity"><p class="quantity">20</p></span>
-                                <p>12 x 16</p>
-                                <p class="price-per-unit" id="ic-sp-ppu">$0 ppu</p>
-                            </div>
-                            <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                <span id="ic-medium-photo-quantity"><p class="quantity">20</p></span>
-                                <p>24 x 32</p>
-                                <p class="price-per-unit" id="ic-mp-ppu">$0 ppu</p>
-                            </div>
-                            <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                <span id="ic-large-photo-quantity"><p class="quantity">20</p></span>
-                                <p>36 x 48</p>
-                                <p class="price-per-unit" id="ic-lp-ppu">$0 ppu</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="modify-lsiting-buttons">
-                        <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
-                        <button class="edit-remove-buttons" type="button" name="deleteProduct">Delete</button>
-        
-                    </div>
-
-                </fieldset>
-            </div>
-
-
-            <template class="product-inventory-div">
-                <div class="product-card-container">
+        <div class="inventory-container">
+            <template name="product-inventory-div">
+                <div class="inventory-grid-container">
                     <fieldset class="product-inventory-card">
-                        <legend class="ic-product-name"></legend>
-                        <h4 class="date-added"></h4>
+                        <legend class="ic-product-name">Product Name</legend>
+                        <h4 class="ic-base-price">Base Price</h4>
                         <div class="product-specs">
-                            <div class="ic-image-preview"></div>
-                            <h5 id="date-added"></h5>
-                            <p class="ic-product-description"></p>
+                            <div class="ic-image-preview-container">
+                                <img alt="image preview" class="ic-image-preview">
+                            </div>
+                            <p class="ic-product-description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.</p>
                         </div>
-                        <div id="line-break"><hr></div>
+                        <div class="line-break"><hr></div>
 
 
-                        <div id="inventory-option-section">
-                            <div id="canvas-options-inventory-container">
+                        <div class="inventory-option-section">
+                            <div class="canvas-options-inventory-container">
                                 <h4>Canvas Prints</h4>
-                                <div class="inventory-option-ppu" id="small-canvas-inventory-info">
-                                    <p id="ic-small-canvas-quantity" class="quantity"></p>
+                                <div class="inventory-option-ppu small-canvas-inventory-info">
+                                    <span class="ic-small-canvas-quantity"><p class="quantity">20</p></span>
                                     <p>12 x 16</p>
-                                    <p class="price-per-unit" id="ic-sc-ppu"></p>
+                                    <p class="price-per-unit ic-sc-ppu">$0 ppu</p>
                                 </div>
-                                <div class="inventory-option-ppu" id="medium-canvas-inventory-info">
-                                    <p id="ic-medium-canvas-quantity" class="quantity"></p>
+                                <div class="inventory-option-ppu medium-canvas-inventory-info">
+                                    <span class="ic-medium-canvas-quantity"><p class="quantity">20</p></span>
                                     <p>24 x 32</p>
-                                    <p class="price-per-unit" id="ic-mc-ppu"></p>
+                                    <p class="price-per-unit ic-mc-ppu">$0 ppu</p>
                                 </div>
                                 <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
-                                    <p id="ic-large-canvas-quantity" class="quantity"></p>
+                                    <span class="ic-large-canvas-quantity"><p class="quantity">20</p></span>
                                     <p>36 x 48</p>
-                                    <p class="price-per-unit" id="ic-lc-ppu"></p>
+                                    <p class="price-per-unit ic-lc-ppu">$0 ppu</p>
                                 </div>
                             </div>
                                 
-                            <div id="original-option-inventory">
+                            <div class="original-option-inventory">
                                 <h4>Original</h4>
-                                <div class="inventory-option-ppu" id="original-inventory-info">
-                                    <p id="og-quantity" class="quantity"></p>
-                                    <p class="price-per-unit" id="ic-og-price"></p>
+                                <div class="inventory-option-ppu original-inventory-info">
+                                    <p class="price-per-unit ic-og-price">$0</p>
                                 </div>
                             </div>
 
-                            <div id="photo-options-inventory-container">
+                            <div class="photo-options-inventory-container">
                                 <h4>Photo Prints</h4>
-                                <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                    <p id="ic-small-photo-quantity" class="quantity"></p>
+                                <div class="inventory-option-ppu small-photo-inventory-info">
+                                    <span class="ic-small-photo-quantity"><p class="quantity">20</p></span>
                                     <p>12 x 16</p>
-                                    <p class="price-per-unit" id="ic-sp-ppu"></p>
+                                    <p class="price-per-unit ic-sp-ppu">$0 ppu</p>
                                 </div>
-                                <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                    <p id="ic-medium-photo-quantity" class="quantity"></p>
+                                <div class="inventory-option-ppu small-photo-inventory-info">
+                                    <span class="ic-medium-photo-quantity"><p class="quantity">20</p></span>
                                     <p>24 x 32</p>
-                                    <p class="price-per-unit" id="ic-mp-ppu"></p>
+                                    <p class="price-per-unit ic-mp-ppu">$0 ppu</p>
                                 </div>
-                                <div class="inventory-option-ppu" id="small-photo-inventory-info">
-                                    <p id="ic-large-photo-quantity" class="quantity"></p>
+                                <div class="inventory-option-ppu small-photo-inventory-info">
+                                    <span class="ic-large-photo-quantity"><p class="quantity">20</p></span>
                                     <p>36 x 48</p>
-                                    <p class="price-per-unit" id="ic-lp-ppu"></p>
+                                    <p class="price-per-unit ic-lp-ppu">$0 ppu</p>
                                 </div>
                             </div>
                         </div>
@@ -274,6 +201,7 @@
                         <div id="modify-lsiting-buttons">
                             <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
                             <button class="edit-remove-buttons" type="button" name="deleteProduct">Delete</button>
+            
                         </div>
 
                     </fieldset>

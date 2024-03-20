@@ -202,43 +202,46 @@ largePhotoOption.addEventListener("input", (e) => {
 })
 
 // form submit button
-const inventoryContainer = document.querySelector("#inventory-container");
+const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 
-const productInventoryTemplate = document.querySelector(".product-inventory-div").content;
-const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
-submitButton.addEventListener("click", (e) => {
+
+addProductForm.addEventListener("submit", (e) => {
     e.preventDefault();
+    const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
+    const productTemplateCopy = document.importNode(productInventoryTemplate, true);
     productTemplateCopy.querySelector(".ic-product-name").textContent = productName.value;
+    previewListingName.innerHTML = "";
     // productTemplateCopy.querySelector(".date-added").textContent = new Date();
+    let url = URL.createObjectURL(productImage.files[0]);
     
-    productTemplateCopy.querySelector(".ic-image-preview").style.backgroundImage = "url(" + URL.createObjectURL(productImage.files[0]) + ")";
+    productTemplateCopy.querySelector(".ic-image-preview").setAttribute("src", url);
     productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
+    previewProductImage.setAttribute("src", "")
     
-    productTemplateCopy.querySelector("#ic-small-canvas-quantity").textContent = smallCanvasOption.value;
-    productTemplateCopy.querySelector("#ic-sc-ppu").textContent = `$${scVal}`;
+    productTemplateCopy.querySelector(".ic-small-canvas-quantity").textContent = smallCanvasOption.value;
+    productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}`;
 
-    productTemplateCopy.querySelector("#ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
-    productTemplateCopy.querySelector("#ic-mc-ppu").textContent = `$${mcVal}`;
+    productTemplateCopy.querySelector(".ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
+    productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}`;
 
-    productTemplateCopy.querySelector("#ic-large-canvas-quantity").textContent = largeCanvasOption.value;
-    productTemplateCopy.querySelector("#ic-lc-ppu").textContent = `$${lcVal}`;
+    productTemplateCopy.querySelector(".ic-large-canvas-quantity").textContent = largeCanvasOption.value;
+    productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}`;
 
-    productTemplateCopy.querySelector("#ic-og-price").textContent = `$${ogVal}`;
-    originalOptionCheck.checked === true ? productTemplateCopy.querySelector("#og-quantity").textContent = "1" : "0";
+    productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}`;
+    originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
 
-    productTemplateCopy.querySelector("#ic-small-photo-quantity").textContent = smallPhotoOption.value;
-    productTemplateCopy.querySelector("#ic-sp-ppu").textContent = `$${spVal}`;
+    productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
+    productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}`;
 
-    productTemplateCopy.querySelector("#ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
-    productTemplateCopy.querySelector("#ic-mp-ppu").textContent = `$${mpVal}`;
+    productTemplateCopy.querySelector(".ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
+    productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}`;
 
-    productTemplateCopy.querySelector("#ic-large-photo-quantity").textContent = largePhotoOption.value;
-    productTemplateCopy.querySelector("#ic-lp-ppu").textContent = `$${lpVal}`;
-    inventoryContainer.append(productTemplateCopy);
+    productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
+    productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
+    inventoryContainer.appendChild(productTemplateCopy);
     addProductForm.reset();
-    console.log(productTemplateCopy);
 })
 
 // delete product listing button
