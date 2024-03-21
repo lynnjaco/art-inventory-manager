@@ -101,6 +101,7 @@ function originalOptionCheck() {
 const smallCanvasOption = addProductForm.canvasSmall;
 const mediumCanvasOption = addProductForm.canvasMedium;
 const largeCanvasOption = addProductForm.canvasLarge;
+
 // displays canvas inventory inputs and ppus to preview
 let scVal = smallCanvasPreview.value;
 smallCanvasOption.addEventListener("input", (e) => {
@@ -204,6 +205,7 @@ largePhotoOption.addEventListener("input", (e) => {
 // form submit button
 const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
+const missingInputError = document.querySelector("#missing-input-error");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -212,9 +214,8 @@ submitButton.addEventListener("click", (e) => {
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
     const date = new Date();
     let url = URL.createObjectURL(productImage.files[0]);
-    const noOptionSelctedError = document.querySelector("#no-option-selected-error");
     
-    if (!checkStyleCheckboxes()){
+    if (!checkForRequiredInputs()){
         productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
 
         productTemplateCopy.querySelector(".ic-date-added").textContent = `Date Added: ${date.toDateString()}`;
@@ -223,37 +224,56 @@ submitButton.addEventListener("click", (e) => {
         productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
         
         productTemplateCopy.querySelector(".ic-small-canvas-quantity").textContent = smallCanvasOption.value;
-        productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}`;
+        scVal ? productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}` :
+        productTemplateCopy.querySelector(".ic-sc-ppu").textContent = "";
 
         productTemplateCopy.querySelector(".ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
-        productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}`;
+        mcVal ? productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}` :
+        productTemplateCopy.querySelector(".ic-mc-ppu").textContent = "";
 
         productTemplateCopy.querySelector(".ic-large-canvas-quantity").textContent = largeCanvasOption.value;
-        productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}`;
+        lcVal ? productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}` :
+        productTemplateCopy.querySelector(".ic-lc-ppu").textContent = "";
 
-        productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}`;
-        originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
+        ogVal ? productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}` :
+        productTemplateCopy.querySelector(".ic-og-price").textContent = "n/a";
+        // originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
 
         productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
-        productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}`;
+        spVal ? productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}` :
+        productTemplateCopy.querySelector(".ic-sp-ppu").textContent = "";
 
         productTemplateCopy.querySelector(".ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
-        productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}`;
+        mpVal ? productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}` :
+        productTemplateCopy.querySelector(".ic-mp-ppu").textContent = "";
 
         productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
-        productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
+        lpVal ? productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}` :
+        productTemplateCopy.querySelector(".ic-lp-ppu").textContent = "";
 
         inventoryContainer.prepend(productTemplateCopy);
-        noOptionSelctedError.style.display = "none";
+        missingInputError.style.display = "none";
         addProductForm.reset();
         resetPreview();
     } else {
-        noOptionSelctedError.style.display = "block";
+        missingInputError.style.display = "block";
     }
+})
+
+// reset add product form
+const resetFormButton = document.querySelector("#reset-form-button");
+resetFormButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    addProductForm.reset();
+    resetPreview();
 })
 
 // resets preview values
 function resetPreview(){
+    canvasOptionPreview.style.display = "none";
+    photoOptionPreview.style.display = "none";
+    originalOptionPreview.style.display = "none";
+
     previewListingName.innerText = "";
     previewProductImage.setAttribute("src", "");
     smallCanvasPreview.innerText = "";
@@ -263,14 +283,9 @@ function resetPreview(){
     smallPhotoPreview.innerText = "";
     mediumPhotoPreview.innerText = "";
     largePhotoPreview.innerText = "";
+
+    missingInputError.style.display = "none";
 }
-// reset add product form
-const resetFormButton = document.querySelector("#reset-form-button");
-resetFormButton.addEventListener("click", (e) => {
-    e.preventDefault();
-    addProductForm.reset();
-    resetPreview();
-})
 
 // delete product listing button
 const deleteButtons = document.querySelectorAll("#delete-product");
@@ -282,6 +297,8 @@ for (let button of deleteButtons) {
 }
 
 // function to ensure at least one product style is selected
-function checkStyleCheckboxes() {
-    return canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false;
+function checkForRequiredInputs() {
+    if( productName.value.length < 1 || (canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false) ) {
+        return true;
+    };
 }

@@ -30,10 +30,10 @@
                 <legend id="product-options-legend">Add New Product</legend>
                 <form id="add-product-form" name="add-product-form">
                     <div class="adp-element">
-                        <label>Product Name</label><input type="text" name="productName" id="product-name-input"required/>
+                        <label>Product Name *</label><input type="text" name="productName" id="product-name-input"required/>
                     </div>
                     <div class="adp-element">
-                        <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg" required>
+                        <label>Product Image * </label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg" required>
                     </div>
                     <div class="adp-element">
                         <label>Price Multiplier</label><input type="number" placeholder="$" name="addProductForm" id="base-price" min="1" value="1" required/>
@@ -41,7 +41,7 @@
 
                     <div class="adp-element">
                         <fieldset id="options-fieldset">
-                            <legend id="product-options-label">Product Options</legend>
+                            <legend id="product-options-label">Product Options *</legend>
                             <div id="options-inventory">
 
                                 <div class="product-option" id="canvas-selction">
@@ -93,7 +93,8 @@
                         </div>
                     </div>     
                 </form>
-                <h4 id="no-option-selected-error">At least one product option must be selected.</h4>
+                <h4 id="missing-input-error">Please provide all required inputs.</h4>
+                <h5 id="required-note">* = required input</h5>
             </fieldset>
         </div>
 

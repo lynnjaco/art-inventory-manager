@@ -110,7 +110,7 @@
     }
 }
 
-#no-option-selected-error{
+#missing-input-error{
     text-align: center;
     color:#0B7A75;
     text-transform: uppercase;
