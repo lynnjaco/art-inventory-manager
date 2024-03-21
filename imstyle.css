@@ -302,7 +302,7 @@
     text-align: center;
 }
 
-.ic-base-price{
+.ic-date-added{
     grid-row: 1 / 2;
     grid-column: 1 / span end;
 

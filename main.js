@@ -205,7 +205,7 @@ largePhotoOption.addEventListener("input", (e) => {
 const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 
-addProductForm.addEventListener("submit", (e) => {
+submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
@@ -213,7 +213,7 @@ addProductForm.addEventListener("submit", (e) => {
     productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
 
     const date = new Date();
-    productTemplateCopy.querySelector(".ic-base-price").textContent = `Date Added: ${date.toDateString()}`;
+    productTemplateCopy.querySelector(".ic-date-added").textContent = `Date Added: ${date.toDateString()}`;
 
     let url = URL.createObjectURL(productImage.files[0]);
     
