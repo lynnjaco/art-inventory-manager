@@ -207,43 +207,49 @@ const submitButton = document.querySelector("#add-product-button");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
+
     const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
-
-    productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
-
     const date = new Date();
-    productTemplateCopy.querySelector(".ic-date-added").textContent = `Date Added: ${date.toDateString()}`;
-
     let url = URL.createObjectURL(productImage.files[0]);
+    const noOptionSelctedError = document.querySelector("#no-option-selected-error");
     
-    productTemplateCopy.querySelector(".ic-image-preview").setAttribute("src", url);
-    productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
+    if (!checkStyleCheckboxes()){
+        productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
+
+        productTemplateCopy.querySelector(".ic-date-added").textContent = `Date Added: ${date.toDateString()}`;
     
-    productTemplateCopy.querySelector(".ic-small-canvas-quantity").textContent = smallCanvasOption.value;
-    productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}`;
+        productTemplateCopy.querySelector(".ic-image-preview").setAttribute("src", url);
+        productTemplateCopy.querySelector(".ic-product-description").textContent = productDescription.value;
+        
+        productTemplateCopy.querySelector(".ic-small-canvas-quantity").textContent = smallCanvasOption.value;
+        productTemplateCopy.querySelector(".ic-sc-ppu").textContent = `$${scVal}`;
 
-    productTemplateCopy.querySelector(".ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
-    productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}`;
+        productTemplateCopy.querySelector(".ic-medium-canvas-quantity").textContent = mediumCanvasOption.value;
+        productTemplateCopy.querySelector(".ic-mc-ppu").textContent = `$${mcVal}`;
 
-    productTemplateCopy.querySelector(".ic-large-canvas-quantity").textContent = largeCanvasOption.value;
-    productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}`;
+        productTemplateCopy.querySelector(".ic-large-canvas-quantity").textContent = largeCanvasOption.value;
+        productTemplateCopy.querySelector(".ic-lc-ppu").textContent = `$${lcVal}`;
 
-    productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}`;
-    originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
+        productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}`;
+        originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
 
-    productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
-    productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}`;
+        productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
+        productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}`;
 
-    productTemplateCopy.querySelector(".ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
-    productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}`;
+        productTemplateCopy.querySelector(".ic-medium-photo-quantity").textContent = mediumPhotoOption.value;
+        productTemplateCopy.querySelector(".ic-mp-ppu").textContent = `$${mpVal}`;
 
-    productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
-    productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
+        productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
+        productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
 
-    inventoryContainer.prepend(productTemplateCopy);
-    addProductForm.reset();
-    resetPreview();
+        inventoryContainer.prepend(productTemplateCopy);
+        noOptionSelctedError.style.display = "none";
+        addProductForm.reset();
+        resetPreview();
+    } else {
+        noOptionSelctedError.style.display = "block";
+    }
 })
 
 // resets preview values
@@ -273,4 +279,9 @@ for (let button of deleteButtons) {
         e.preventDefault();
         e.currentTarget.parentNode.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode.parentNode);
     })
+}
+
+// function to ensure at least one product style is selected
+function checkStyleCheckboxes() {
+    return canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false;
 }

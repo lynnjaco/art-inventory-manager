@@ -110,6 +110,13 @@
     }
 }
 
+#no-option-selected-error{
+    text-align: center;
+    color:#0B7A75;
+    text-transform: uppercase;
+    display: none;
+}
+
 /* add product preview container */
 #product-preview-container {
     min-height: 25em;
