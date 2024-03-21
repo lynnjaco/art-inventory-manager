@@ -241,7 +241,7 @@ addProductForm.addEventListener("submit", (e) => {
     productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
     productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}`;
 
-    inventoryContainer.appendChild(productTemplateCopy);
+    inventoryContainer.prepend(productTemplateCopy);
     addProductForm.reset();
     resetPreview();
 })
@@ -267,7 +267,7 @@ resetFormButton.addEventListener("click", (e) => {
 })
 
 // delete product listing button
-const deleteButtons = document.querySelectorAll(".deleteProduct");
+const deleteButtons = document.querySelectorAll("#delete-product");
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
         e.preventDefault();

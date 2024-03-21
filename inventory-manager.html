@@ -11,10 +11,10 @@
 <body>
     <header>
         <nav id="headser-nav-menu">
-            <a href="home.html">Home</a>
-            <a href="storefront.html">Store</a>
-            <a href="inventory-manager.html">Inventory Manager</a>
-            <a href="about.html">About</a>
+            <a href="#">Home</a>
+            <a href="#">Store</a>
+            <a href="#">Inventory Manager</a>
+            <a href="#">About</a>
         </nav>  
         <div id="logo-block">
             <img src="assets/artstorelogo.png" alt="logo" id="header-logo"/>
@@ -36,7 +36,7 @@
                         <label>Product Image</label><input type="file" placeholder="Upload Product Image" name="productImage" accept="image/png, image/jpeg" required>
                     </div>
                     <div class="adp-element">
-                        <label>Base Price</label><input type="number" placeholder="$" name="addProductForm" id="base-price" min="1" value="1" required/>
+                        <label>Price Multiplier</label><input type="number" placeholder="$" name="addProductForm" id="base-price" min="1" value="1" required/>
                     </div>
 
                     <div class="adp-element">
@@ -143,7 +143,10 @@
             <h3 id="total-value-text">Total Value Of Current Inventory:</h3>
             <h2 id="total-value">$</h2>
         </div> -->
-        
+        <div id="sample-product-card">
+            <img src="assets/sample.png" alt="sample product card">
+        </div>
+
         <div class="inventory-container">
             <template name="product-inventory-div">
                 <div class="inventory-grid-container">
@@ -208,7 +211,7 @@
 
                         <div id="modify-lsiting-buttons">
                             <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
-                            <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
+                            <button class="edit-remove-buttons" type="button" id="delete-product">Delete</button>
             
                         </div>
 
@@ -216,7 +219,6 @@
                 </div>
             </template>
 
-    
             <div class="inventory-grid-container">
                 <fieldset class="product-inventory-card">
                     <legend class="ic-product-name">"It's A Breeze"</legend>
@@ -416,8 +418,8 @@
                     </div>
 
                     <div id="modify-lsiting-buttons">
-                        <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
-                        <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
+                        <button class="edit-remove-buttons" type="button" id="#edit-button">Edit</button>
+                        <button class="edit-remove-buttons" type="button" id="#delete-product">Delete</button>
         
                     </div>
 
@@ -427,20 +429,23 @@
         
     </main>
     <footer>
-        <nav id="footer-nav-menu">
-            <a href="home.html">Home</a>
-            <a href="storefront.html">View Store</a>
-            <a href="inventory-manager.html">Inventory Manager</a>
-            <a href="about.html">About</a>
-        </nav>
+
         <div id="store-info">
-            <h3 id="store-name">Art Store</h3>
-            <p>
-                1 Lynnette Way<br>
-                Jacobsville, NJ, 11792<br>
-                123.456.7890<br>
-                contact@artstore.com<br>
-            </p>
+            <div>
+                <h3 id="store-name">Art Store</h3>
+                <p>
+                    1 Lynnette Way<br>
+                    Jacobsville, NJ, 11792<br>
+                    123.456.7890<br>
+                    contact@artstore.com<br>
+                </p>
+            </div>
+            <nav id="footer-nav-menu">
+                <a href="#">Home</a>
+                <a href="#">View Store</a>
+                <a href="#">Inventory Manager</a>
+                <a href="#">About</a>
+            </nav>
         </div>
         <p id="copyright">© Art Store 2024</p>
 

@@ -1,6 +1,6 @@
 /* parent container */
 #new-product-manager-section{
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -17,15 +17,15 @@
 
 /* add product form container */
 #form-container{
-    height: 30em;
+    min-height: 30em;
     min-width: 40em; 
     width: 50em;
 }
 
 #form-fieldset{
-    border: 1px solid lightgray;
+    border: 1px solid grey;
     border-radius: 0.5em;
-    height: 100%;
+    height: auto;
     padding-top: 1em;
     padding-bottom: 1em;
 
@@ -112,21 +112,17 @@
 
 /* add product preview container */
 #product-preview-container {
-    height: 30em;
+    min-height: 25em;
     min-width: 40em; 
     width: 50em;
-
 }
 
 #preview-fieldset {
-    height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 5fr 1fr 7fr 1fr;
-    border: 1px solid lightgray;
+    grid-template-rows: 1fr 5fr 1fr 7fr;
+    border: 1px solid grey;
     border-radius: 0.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
 }
 
 #listing-name{
@@ -205,11 +201,10 @@
 #inventory-price-preview {
     grid-row: 4 / 5;
     grid-column: 1 / span end;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
-
+    height: 5em;
     text-align: center;
 }
 
@@ -244,12 +239,24 @@
     text-transform: uppercase;
     background-color: goldenrod;
     color: white;
-    padding: 0.2em;
+    padding-left: 3em;
     width: 100%;
 }
 
 #inventory-total-value{
     text-align: center;
+}
+
+#sample-product-card{
+    height: 25em;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    img{
+        height: 100%;
+        object-fit: contain;
+    }
 }
 
 /* product inventory card section*/
@@ -276,7 +283,7 @@
 }
 
 .product-inventory-card{
-    width: 30em;
+    width: 25em;
     height: 40em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -396,29 +403,3 @@
     }
 }
 
-/* 
-#inventory-table-container{
-    margin: 5.0em;
-}
-
-#inventory-table{
-   width: 90%;
-   border: 0.01em solid lightgrey;
-   padding-top: 0.5em;
-   padding-top: 0.5em;
-   margin-left: auto;
-   margin-right: auto;
-   text-align: center;
-}
-
-#inventory-option-table{
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    table-layout: auto;
-    width: 80%;
-
-    th{
-        font-weight: 400;
-    }
-} */
