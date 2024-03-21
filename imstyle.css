@@ -26,6 +26,8 @@
     border: 1px solid lightgray;
     border-radius: 0.5em;
     height: 100%;
+    padding-top: 1em;
+    padding-bottom: 1em;
 
     display: flex;
     flex-direction: column;
@@ -96,9 +98,15 @@
         }
     }
 
+    #button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
     #add-product-button, #reset-form-button{
         margin-top: 0.3em;
-        width: 25%;
+        width: 100%;
     }
 }
 
@@ -117,6 +125,8 @@
     grid-template-rows: 1fr 5fr 1fr 7fr 1fr;
     border: 1px solid lightgray;
     border-radius: 0.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 #listing-name{
@@ -140,6 +150,7 @@
 .product-specs {
     grid-row: 2 / 3;
     grid-column: 1 / span end;
+    margin: 1em;
 
     display: flex;
     flex-direction: row;
@@ -148,8 +159,11 @@
 }
 
 .image-preview-container{
-    height: 10em;
-    min-width: 30%;
+    max-width: 20%;
+
+    border: 0.5em solid rgb(70, 66, 62);
+    background-color: rgb(255, 248, 238);
+    padding: 1em;
 
     display: flex;
     justify-content: center;
@@ -263,7 +277,7 @@
 
 .product-inventory-card{
     width: 30em;
-    height: auto;
+    height: 40em;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 5fr 1fr 7fr 1fr;
@@ -290,8 +304,12 @@
 }
 
 .ic-image-preview-container{
-    height: 10em;
+    height: 12em;
     min-width: 30%;
+
+    border: 0.5em solid rgb(70, 66, 62);
+    background-color: rgb(255, 248, 238);
+    padding: 1em;
 
     display: flex;
     justify-content: center;
@@ -315,7 +333,7 @@
 .inventory-option-section{
     grid-row: 4 / 5;
     grid-column: 1 / span end;
-    height: 30em;
+    height: 16em;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);

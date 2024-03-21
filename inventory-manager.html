@@ -84,12 +84,15 @@
                     <div class="adp-element">
                         <label>Product Description</label><input type="text" name="productDescription" id="product-description-input" placeholder="150 character limit" maxlength="150"/>
                     </div>
-                    <div class="adp-element">
-                        <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
+                    <div id="button-container">
+                        <div class="adp-element">
+                            <button type="submit" id="add-product-button" form="add-product-form">Add Product</button>
+                        </div>
+                        <div class="adp-element">
+                            <button type="submit" id="reset-form-button" form="reset-form-button">Reset Form</button>
+                        </div>
                     </div>
-                    <div class="adp-element">
-                        <button type="submit" id="reset-form-button" form="reset-form-button">Reset Form</button>
-                    </div>
+                    
                     
                 </form>
             </fieldset>
@@ -205,13 +208,221 @@
 
                         <div id="modify-lsiting-buttons">
                             <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
-                            <button class="edit-remove-buttons" type="button" name="deleteProduct">Delete</button>
+                            <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
             
                         </div>
 
                     </fieldset>
                 </div>
             </template>
+
+    
+            <div class="inventory-grid-container">
+                <fieldset class="product-inventory-card">
+                    <legend class="ic-product-name">"It's A Breeze"</legend>
+                    <h4 class="ic-base-price">Date Added: Tue Mar 04 2024</h4>
+                    <div class="product-specs">
+                        <div class="ic-image-preview-container">
+                            <img alt="image preview" class="ic-image-preview" src="assets/pexels-photo-1234853.jpeg">
+                        </div>
+                        <p class="ic-product-description">Photographic narrative captures fleeting moments, freezing time in a captivating tableau.</p>
+                    </div>
+                    <div class="line-break"><hr></div>
+
+
+                    <div class="inventory-option-section">
+                        <div class="canvas-options-inventory-container">
+                            <h4>Canvas Prints</h4>
+                            <div class="inventory-option-ppu small-canvas-inventory-info">
+                                <span class="ic-small-canvas-quantity"><p class="quantity">25</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sc-ppu">$60</p>
+                            </div>
+                            <div class="inventory-option-ppu medium-canvas-inventory-info">
+                                <span class="ic-medium-canvas-quantity"><p class="quantity">40</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mc-ppu">$120</p>
+                            </div>
+                            <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
+                                <span class="ic-large-canvas-quantity"><p class="quantity">10</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lc-ppu">$180</p>
+                            </div>
+                        </div>
+                            
+                        <div class="original-option-inventory">
+                            <h4>Original</h4>
+                            <div class="inventory-option-ppu original-inventory-info">
+                                <p class="price-per-unit ic-og-price">$330</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-options-inventory-container">
+                            <h4>Photo Prints</h4>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-small-photo-quantity"><p class="quantity">50</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sp-ppu">$30</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-medium-photo-quantity"><p class="quantity">35</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mp-ppu">$60</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-large-photo-quantity"><p class="quantity">15</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lp-ppu">$90</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modify-lsiting-buttons">
+                        <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
+                        <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
+        
+                    </div>
+
+                </fieldset>
+            </div>
+           
+            <div class="inventory-grid-container">
+                <fieldset class="product-inventory-card">
+                    <legend class="ic-product-name">"Orangey"</legend>
+                    <h4 class="ic-base-price">Date Added: Fri Mar 15 2024</h4>
+                    <div class="product-specs">
+                        <div class="ic-image-preview-container">
+                            <img alt="image preview" class="ic-image-preview" src="assets/pexels-photo-1367268.jpeg">
+                        </div>
+                        <p class="ic-product-description">Vibrant strokes dance across canvas, evoking a symphony of colors and emotions.</p>
+                    </div>
+                    <div class="line-break"><hr></div>
+
+
+                    <div class="inventory-option-section">
+                        <div class="canvas-options-inventory-container">
+                            <h4>Canvas Prints</h4>
+                            <div class="inventory-option-ppu small-canvas-inventory-info">
+                                <span class="ic-small-canvas-quantity"><p class="quantity">60</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sc-ppu">$50</p>
+                            </div>
+                            <div class="inventory-option-ppu medium-canvas-inventory-info">
+                                <span class="ic-medium-canvas-quantity"><p class="quantity">45</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mc-ppu">$100</p>
+                            </div>
+                            <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
+                                <span class="ic-large-canvas-quantity"><p class="quantity">20</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lc-ppu">$150</p>
+                            </div>
+                        </div>
+                            
+                        <div class="original-option-inventory">
+                            <h4>Original</h4>
+                            <div class="inventory-option-ppu original-inventory-info">
+                                <p class="price-per-unit ic-og-price">$275</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-options-inventory-container">
+                            <h4>Photo Prints</h4>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-small-photo-quantity"><p class="quantity">40</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sp-ppu">$25</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-medium-photo-quantity"><p class="quantity">35</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mp-ppu">$50</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-large-photo-quantity"><p class="quantity">5</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lp-ppu">$75</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modify-lsiting-buttons">
+                        <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
+                        <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
+        
+                    </div>
+
+                </fieldset>
+            </div>
+      
+            <div class="inventory-grid-container">
+                <fieldset class="product-inventory-card">
+                    <legend class="ic-product-name">"Chaos"</legend>
+                    <h4 class="ic-base-price">Date Added: Wed Mar 20 2024</h4>
+                    <div class="product-specs">
+                        <div class="ic-image-preview-container">
+                            <img alt="image preview" class="ic-image-preview" src="assets/pexels-photo-9902153.jpeg">
+                        </div>
+                        <p class="ic-product-description">Sculpted forms intertwine, revealing tales of passion, struggle, and resilience.</p>
+                    </div>
+                    <div class="line-break"><hr></div>
+
+
+                    <div class="inventory-option-section">
+                        <div class="canvas-options-inventory-container">
+                            <h4>Canvas Prints</h4>
+                            <div class="inventory-option-ppu small-canvas-inventory-info">
+                                <span class="ic-small-canvas-quantity"><p class="quantity">25</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sc-ppu">$90</p>
+                            </div>
+                            <div class="inventory-option-ppu medium-canvas-inventory-info">
+                                <span class="ic-medium-canvas-quantity"><p class="quantity">15</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mc-ppu">$180</p>
+                            </div>
+                            <div class="inventory-option-ppu" id="larger-canvas-inventory-info">
+                                <span class="ic-large-canvas-quantity"><p class="quantity">5</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lc-ppu">$270</p>
+                            </div>
+                        </div>
+                            
+                        <div class="original-option-inventory">
+                            <h4>Original</h4>
+                            <div class="inventory-option-ppu original-inventory-info">
+                                <p class="price-per-unit ic-og-price">$495</p>
+                            </div>
+                        </div>
+
+                        <div class="photo-options-inventory-container">
+                            <h4>Photo Prints</h4>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-small-photo-quantity"><p class="quantity">20</p></span>
+                                <p>12 x 16</p>
+                                <p class="price-per-unit ic-sp-ppu">$45</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-medium-photo-quantity"><p class="quantity">20</p></span>
+                                <p>24 x 32</p>
+                                <p class="price-per-unit ic-mp-ppu">$90</p>
+                            </div>
+                            <div class="inventory-option-ppu small-photo-inventory-info">
+                                <span class="ic-large-photo-quantity"><p class="quantity">50</p></span>
+                                <p>36 x 48</p>
+                                <p class="price-per-unit ic-lp-ppu">$135</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modify-lsiting-buttons">
+                        <button class="edit-remove-buttons" type="button" name="editButton">Edit</button>
+                        <button class="edit-remove-buttons" type="button" class="deleteProduct">Delete</button>
+        
+                    </div>
+
+                </fieldset>
+            </div>
         </div>
         
     </main>

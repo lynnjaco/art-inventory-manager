@@ -210,10 +210,10 @@ addProductForm.addEventListener("submit", (e) => {
     const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
 
-    productTemplateCopy.querySelector(".ic-product-name").textContent = productName.value;
+    productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
 
     const date = new Date();
-    productTemplateCopy.querySelector(".ic-base-price").textContent = date.toDateString();
+    productTemplateCopy.querySelector(".ic-base-price").textContent = `Date Added: ${date.toDateString()}`;
 
     let url = URL.createObjectURL(productImage.files[0]);
     
@@ -249,7 +249,7 @@ addProductForm.addEventListener("submit", (e) => {
 // resets preview values
 function resetPreview(){
     previewListingName.innerText = "";
-    previewProductImage.setAttribute("src", "URL('assets/artstorelogo.png')");
+    previewProductImage.setAttribute("src", "");
     smallCanvasPreview.innerText = "";
     mediumCanvasPreview.innerText = "";
     largeCanvasPreview.innerText = "";
@@ -267,12 +267,10 @@ resetFormButton.addEventListener("click", (e) => {
 })
 
 // delete product listing button
-const deleteButtons = document.querySelectorAll("[name='deleteProduct']");
+const deleteButtons = document.querySelectorAll(".deleteProduct");
 for (let button of deleteButtons) {
     button.addEventListener("click", (e) => {
         e.preventDefault();
         e.currentTarget.parentNode.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode.parentNode);
     })
 }
-
-// calculate total inventory val
