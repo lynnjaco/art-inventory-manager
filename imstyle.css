@@ -40,18 +40,18 @@
     }
 }
 
+.input-element{
+    background-color: rgb(231, 231, 231);
+    border: none;
+    height: 2.0em;
+    border-radius: 0.5em;
+}
+
 #add-product-form{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 3em;
-
-    input[type="text"], input[type="number"]{
-        background-color: rgb(231, 231, 231);
-        border: none;
-        height: 2.0em;
-        border-radius: 0.5em;
-    }
 
     #product-name-input{
         width: 50%;

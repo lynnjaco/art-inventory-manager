@@ -251,9 +251,15 @@ submitButton.addEventListener("click", (e) => {
         lpVal ? productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}` :
         productTemplateCopy.querySelector(".ic-lp-ppu").textContent = "";
 
+        const editCardButton = document.createElement("button");
+        productTemplateCopy.querySelector("#modify-lsiting-buttons").appendChild(editCardButton);
+        editCardButton.innerText = "Update";
+        editCardButton.classList.add("edit-remove-buttons");
+        editProduct(editCardButton);
+
         const deleteCardButton = document.createElement("button");
         productTemplateCopy.querySelector("#modify-lsiting-buttons").appendChild(deleteCardButton);
-        deleteCardButton.innerHTML = "Delete Card";
+        deleteCardButton.innerText = "Delete";
         deleteCardButton.classList.add("edit-remove-buttons");
         deleteProductCard(deleteCardButton);
 
@@ -293,8 +299,26 @@ function resetPreview(){
     missingInputError.style.display = "none";
 }
 
-// delete product listing button
+// edit product
+function editProduct(element){
+    element.addEventListener("click", (e) => {
+        e.preventDefault();
+        const quantities = document.querySelectorAll(".quantity");
+        
+        for (let quantity of quantities) {
+            let currentQuantity = quantity.textContent;
+            
+            const updateQuantityInput = document.createElement("input");
+            updateQuantityInput.type = "number";
+            updateQuantityInput.value = currentQuantity;
+            updateQuantityInput.classList.add("input-element");
+            
+            quantity.parentNode.innerHTML = updateQuantityInput;
+        }
+    })
+}
 
+// delete product listing button
 function deleteProductCard(element){
     element.addEventListener("click", (e) => {
         e.preventDefault();
@@ -305,22 +329,4 @@ function deleteProductCard(element){
 // function to ensure at least one product style is selected
 function checkForRequiredInputs() {
     return canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false;
-}
-
-// edit product card
-
-const editButtons = document.querySelectorAll("#edit-button");
-const updateProductButton = document.querySelector("#update-product-button");
-for (let button of editButtons) {
-    button.addEventListener("click", (e) => {
-        e.preventDefault();
-        submitButton.style.display = "none";
-        updateProductButton.style.display = "block";
-
-        updateProductButton.addEventListener("submit", () => {
-
-        })
-
-    })
-
 }
