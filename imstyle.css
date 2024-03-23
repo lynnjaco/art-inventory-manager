@@ -101,13 +101,17 @@
     #button-container{
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-evenly;  
+        
+        button{
+            margin-top: 0.3em;
+            width: 100%;
+        }
     }
+}
 
-    #add-product-button, #reset-form-button{
-        margin-top: 0.3em;
-        width: 100%;
-    }
+#update-product-button{
+    display: none;
 }
 
 #missing-input-error{

@@ -214,7 +214,7 @@ submitButton.addEventListener("click", (e) => {
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
     const date = new Date();
     let url = URL.createObjectURL(productImage.files[0]);
-    
+
     if (!checkForRequiredInputs()){
         productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
 
@@ -250,6 +250,12 @@ submitButton.addEventListener("click", (e) => {
         productTemplateCopy.querySelector(".ic-large-photo-quantity").textContent = largePhotoOption.value;
         lpVal ? productTemplateCopy.querySelector(".ic-lp-ppu").textContent = `$${lpVal}` :
         productTemplateCopy.querySelector(".ic-lp-ppu").textContent = "";
+
+        const deleteCardButton = document.createElement("button");
+        productTemplateCopy.querySelector("#modify-lsiting-buttons").appendChild(deleteCardButton);
+        deleteCardButton.innerHTML = "Delete Card";
+        deleteCardButton.classList.add("edit-remove-buttons");
+        deleteProductCard(deleteCardButton);
 
         inventoryContainer.prepend(productTemplateCopy);
         missingInputError.style.display = "none";
@@ -288,17 +294,33 @@ function resetPreview(){
 }
 
 // delete product listing button
-const deleteButtons = document.querySelectorAll("#delete-product");
-for (let button of deleteButtons) {
-    button.addEventListener("click", (e) => {
+
+function deleteProductCard(element){
+    element.addEventListener("click", (e) => {
         e.preventDefault();
-        e.currentTarget.parentNode.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode.parentNode);
+        e.currentTarget.parentNode.parentNode.parentNode.remove();
     })
 }
 
 // function to ensure at least one product style is selected
 function checkForRequiredInputs() {
-    if( productName.value.length < 1 || (canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false) ) {
-        return true;
-    };
+    return canvasCheck.checked === false && originalCheck.checked === false && photoCheck.checked === false;
+}
+
+// edit product card
+
+const editButtons = document.querySelectorAll("#edit-button");
+const updateProductButton = document.querySelector("#update-product-button");
+for (let button of editButtons) {
+    button.addEventListener("click", (e) => {
+        e.preventDefault();
+        submitButton.style.display = "none";
+        updateProductButton.style.display = "block";
+
+        updateProductButton.addEventListener("submit", () => {
+
+        })
+
+    })
+
 }
