@@ -215,7 +215,7 @@ submitButton.addEventListener("click", (e) => {
     const date = new Date();
     let url = URL.createObjectURL(productImage.files[0]);
 
-    if (!checkForRequiredInputs()){
+    if (!checkForRequiredInputs() && productName.value){
         productTemplateCopy.querySelector(".ic-product-name").textContent = `"${productName.value}"`;
 
         productTemplateCopy.querySelector(".ic-date-added").textContent = `Date Added: ${date.toDateString()}`;
