@@ -28,7 +28,7 @@ header{
 }
 
 footer{
-    background-color: black;
+    background-color: #272624;
     color: white;
     padding-left: 2em;
     padding-right: 2em;
@@ -61,7 +61,7 @@ h1{
     text-align: right;
     text-transform: uppercase;
     color: white;
-    background-color: black;
+    background-color: #272624;
     padding-right: 5em;
 
     @media (width < 800px) {

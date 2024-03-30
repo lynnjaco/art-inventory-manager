@@ -22,8 +22,19 @@ const smallPhotoPreview = document.querySelector("#sp-preview");
 const mediumPhotoPreview = document.querySelector("#mp-preview");
 const largePhotoPreview = document.querySelector("#lp-preview");
 
-// TOTAL INVENTORY VALUE
-const totalInventoryValue = document.querySelector("#total-value");
+// TOTAL INVENTORY Quantity
+function checkTotalInventory (){
+    let sum = 0;
+    let ogQuantity = 0;
+    if (ogVal) { 
+        ogQuantity = 1;
+    }
+
+    let numberInputs = addProductForm.querySelectorAll('input[type="number"]');
+    numberInputs.forEach( ele => sum += parseInt(ele.value) || 0);
+
+    return(ogQuantity + sum - 1); // subtract 1 to not include multiplier input
+}
 
 // FORM INPUTS AND EVENTS
 
@@ -49,7 +60,7 @@ productDescription.addEventListener('input', (e) => {
 
 const basePrice = addProductForm.addProductForm;
 
-// product option selections
+// PRODUCT OPTION SELECTIONS
 
 // engage product option checkbox to display inventory inputs and preview
 const canvasOptions = document.querySelector("#canvas-sizes");
@@ -90,6 +101,7 @@ originalCheck.addEventListener("input", (e) => {
     originalOptionCheck();
     e.preventDefault();
 })
+
 function originalOptionCheck() {
     if (originalCheck.checked === true) {
         originalOptionPreview.style.display = "block";
@@ -188,6 +200,7 @@ mediumPhotoOption.addEventListener("input", (e) => {
     }
     e.preventDefault();
 })
+
 let lpVal = largePhotoPreview.value;
 largePhotoOption.addEventListener("input", (e) => {
     if(e.target.value > 0) {
@@ -206,7 +219,6 @@ largePhotoOption.addEventListener("input", (e) => {
 const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 const missingInputError = document.querySelector("#missing-input-error");
-const stock = document.querySelector("#stock-alert");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -214,6 +226,7 @@ submitButton.addEventListener("click", (e) => {
     const productInventoryTemplate = document.querySelector("[name='product-inventory-div']").content;
     const productTemplateCopy = document.importNode(productInventoryTemplate, true);
     const date = new Date();
+    const stock = productTemplateCopy.querySelector("#stock-alert");
     let url = URL.createObjectURL(productImage.files[0]);
 
     if (!checkForRequiredInputs() && productName.value){
@@ -263,14 +276,23 @@ submitButton.addEventListener("click", (e) => {
         deleteCardButton.classList.add("edit-remove-buttons");
         deleteProductCard(deleteCardButton);
 
-        // (!smallCanvasOption.value && !mediumCanvasOption.value && !largeCanvasOption.value && !smallPhotoOption.value && !mediumPhotoOption.value && !largePhotoOption.value && !ogVal) ? 
-        // stock.innerText = "Out of Stock" :
-        // stock.innerText = "In Stock";
-    
+        if(checkTotalInventory() > 0 && checkTotalInventory() < 20) {
+            stock.innerText = "Low Stock";
+            stock.style.backgroundColor = "#e9c46a";
+        }else if(checkTotalInventory() >= 20) {
+            stock.innerText = "In Stock";
+            stock.style.backgroundColor = "#94d2bd";
+        } else {
+            stock.innerText = "Out Of Stock";
+            stock.style.backgroundColor = "#bb3e03";
+        }
+        console.log(checkTotalInventory());
+
         inventoryContainer.prepend(productTemplateCopy);
         missingInputError.style.display = "none";
         addProductForm.reset();
         resetPreview();
+        resetTemplate();
     } else {
         missingInputError.style.display = "block";
     }
@@ -303,11 +325,22 @@ function resetPreview(){
     missingInputError.style.display = "none";
 }
 
-// edit product
+// reset template
+function resetTemplate(){
+    scVal = 0;
+    mcVal = 0;
+    lcVal = 0;
+    spVal = 0;
+    mpVal = 0;
+    lpVal = 0;
+    ogVal = 0;
+}
+
+// edit product - does not work
 function editProduct(element){
     element.addEventListener("click", (e) => {
         e.preventDefault();
-        const quantities = document.querySelectorAll(".quantity");
+        const quantities = e.currentTarget.querySelectorAll(".quantity");
         
         for (let quantity of quantities) {
             let currentQuantity = quantity.textContent;
