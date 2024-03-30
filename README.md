@@ -10,7 +10,7 @@ Features
     (Small Canvas - $20 | Medum Canvas - $40 | Large Canvas - $60 | Small Photo - $10 | Medium Photo - $20 | Large Photo - $30 | Original - $110)  
     Artwork usually has different levels of complexity, so the user has the option to set the multiplier according to their own parameters.
 *   **Preview Product Specifications**: Preview the details of the product being added before submission, including image, price, and description.  
-*   **Manage Current Inventory**: View and manage the current inventory of products.  Products added to the inventory list with no product quantites will display an "out of stock" alert.
+*   **Manage Current Inventory**: View and manage the current inventory of products.  Products added to the inventory list with no product quantites will display an "out of stock" alert.  if product is added to inventory with a total quantity of less than 20, a "Low Stock" alert will display.
 *   **Responsive Design**: The interface is designed to be responsive and work well across different devices and screen sizes by converting dispaly into a column view at narrow screen width;
 
 Technologies Used

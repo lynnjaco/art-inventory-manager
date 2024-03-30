@@ -313,6 +313,7 @@ function resetPreview(){
     originalOptionPreview.style.display = "none";
 
     previewListingName.innerText = "";
+    previewProductDesc.innerText = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste nesciunt, unde deleniti quas deserunt ipsam obcaecati libero ipsa esse, commodi architecto.";
     smallCanvasPreview.innerText = "";
     mediumCanvasPreview.innerText = "";
     largeCanvasPreview.innerText = "";

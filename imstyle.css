@@ -415,7 +415,7 @@
 }
 /*  */
 
-@media (width < 700px) {
+@media (width < 1200px) {
     h1{
         text-align: center;
     }
