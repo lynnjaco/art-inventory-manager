@@ -313,7 +313,6 @@ function resetPreview(){
     originalOptionPreview.style.display = "none";
 
     previewListingName.innerText = "";
-    previewProductImage.setAttribute("src", "");
     smallCanvasPreview.innerText = "";
     mediumCanvasPreview.innerText = "";
     largeCanvasPreview.innerText = "";
@@ -323,6 +322,7 @@ function resetPreview(){
     largePhotoPreview.innerText = "";
 
     missingInputError.style.display = "none";
+    previewProductImage.setAttribute("src", "assets/artstorelogo.png");
 }
 
 // reset template
