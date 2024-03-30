@@ -415,21 +415,3 @@
 }
 /*  */
 
-@media (width < 1200px) {
-    h1{
-        text-align: center;
-    }
-
-    #new-product-manager-section{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #inventory-heading{
-        text-align: center;
-    }
-}
-

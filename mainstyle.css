@@ -2,6 +2,7 @@ body {
     margin: 0em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: white;
+    /* min-width: 900px; */
 }
 
 main {
@@ -84,16 +85,29 @@ button:hover{
     box-shadow: 0.1em 0.1em 0.1em grey;
 }
 
-.page-divider{
-    width: 95%;
-    border: 0.03em solid lightgray;
-    margin-top:3.0em;
-    margin-bottom: 3.0em;
-}
 
 #header-logo{
     height: 5em;
     width: auto;
     margin-right: 2em;
     margin-left: 2em;
+}
+
+
+@media (width < 1200px) {
+    h1{
+        text-align: center;
+    }
+
+    #new-product-manager-section{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #inventory-heading{
+        text-align: center;
+    }
 }
