@@ -6,10 +6,10 @@ Welcome to the Art Store Inventory Manager! This project provides a web-based in
 Features
 --------
 
-*   **Add New Product**: Easily add new products to the inventory with details like name, image, base price, product options, and description.
-*   **Preview Product Specifications**: Preview the details of the product being added before submission, including image, price, and description.
-*   **Manage Current Inventory**: View and manage the current inventory of products, including editing or deleting existing products.
-*   **Responsive Design**: The interface is designed to be responsive and work well across different devices and screen sizes.
+*   **Add New Product**: Easily add new products to the inventory with details like name, image, base price, product options, and description.  Each product option has a base price built into the function to display its final price, after applying the selected price multiplier.  Artwork usually has different levels of complexity, so the user has the option to set the multiplier according to their own parameters.
+*   **Preview Product Specifications**: Preview the details of the product being added before submission, including image, price, and description.  
+*   **Manage Current Inventory**: View and manage the current inventory of products.  Products added to the inventory list with no product quantites will display an "out of stock" alert.
+*   **Responsive Design**: The interface is designed to be responsive and work well across different devices and screen sizes by converting dispaly into a column view at narrow screen width;
 
 Technologies Used
 -----------------

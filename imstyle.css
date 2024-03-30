@@ -196,9 +196,29 @@
     }
 }
 
+#product-desc-stock-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 #listing-description {
     text-align: left;
 }
+
+
+#stock-alert{
+    text-align: center;
+    font-size: 1em;
+    padding: 0.5em;
+    width: 7.0em;
+    border-radius: 0.2em;
+    height: 2.0em;
+    background-color: rgb(226, 214, 0);
+    color: white;
+    text-transform: uppercase;
+}   
 
 .line-break{
     grid-row: 3 / 4;

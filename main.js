@@ -206,6 +206,7 @@ largePhotoOption.addEventListener("input", (e) => {
 const inventoryContainer = document.querySelector(".inventory-container");
 const submitButton = document.querySelector("#add-product-button");
 const missingInputError = document.querySelector("#missing-input-error");
+const stock = document.querySelector("#stock-alert");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -237,7 +238,6 @@ submitButton.addEventListener("click", (e) => {
 
         ogVal ? productTemplateCopy.querySelector(".ic-og-price").textContent = `$${ogVal}` :
         productTemplateCopy.querySelector(".ic-og-price").textContent = "n/a";
-        // originalOptionCheck.checked === true ? productTemplateCopy.querySelector(".og-quantity").textContent = "1" : "0";
 
         productTemplateCopy.querySelector(".ic-small-photo-quantity").textContent = smallPhotoOption.value;
         spVal ? productTemplateCopy.querySelector(".ic-sp-ppu").textContent = `$${spVal}` :
@@ -263,6 +263,10 @@ submitButton.addEventListener("click", (e) => {
         deleteCardButton.classList.add("edit-remove-buttons");
         deleteProductCard(deleteCardButton);
 
+        // (!smallCanvasOption.value && !mediumCanvasOption.value && !largeCanvasOption.value && !smallPhotoOption.value && !mediumPhotoOption.value && !largePhotoOption.value && !ogVal) ? 
+        // stock.innerText = "Out of Stock" :
+        // stock.innerText = "In Stock";
+    
         inventoryContainer.prepend(productTemplateCopy);
         missingInputError.style.display = "none";
         addProductForm.reset();
